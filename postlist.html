@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PostList</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Hahmlet:wght@100;300;800&family=IBM+Plex+Sans+KR:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: 'IBM Plex Sans KR';
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 네비게이션바 -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+
+            <a class="navbar-brand" href="https://www.duksung.ac.kr/main.do">
+                <img src="https://www.duksung.ac.kr/site/duksung/common/img/logo.png" class="img-responsive"
+                    alt="덕성여자대학교">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Team</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li> -->
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row my-5">
+            <div class="col-9">
+                <!-- 게시물 (3개씩) -->
+                <div class="row">
+                    <!-- 카드 1개 -->
+                    <div class="col-md-4 my-3">
+                        <div class="card" style="width: 17rem;">
+                            <!-- admin에서 업로드한 이미지 -->
+                            <img src="https://delight.duksung.ac.kr/attachment/view/24508/cover.jpg?ts=1699244269"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <!-- admin에서 설정하는 제목 -->
+                                <h5 class="card-title">2023학년도 제2차 차미리사교양교육연구소 포럼</h5>
+                                <p class="card-text">
+                                    <span class="badge bg-secondary">온/오프라인</span>&nbsp&nbsp오프라인<br>
+                                    <span class="badge bg-secondary">신청기간</span>&nbsp&nbsp2023.10.06.(금) ~ 11.16.(목) 15시
+                                    
+                                </p>
+                                <!-- 해당 게시물 딜라이트 링크 -->
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <a href="https://delight.duksung.ac.kr/ko/program/all/view/1147"
+                                        class="btn btn-outline-secondary">딜라이트 ⇀</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 my-3">
+                        <div class="card" style="width: 17rem;">
+                            <img src="https://delight.duksung.ac.kr/attachment/view/25733/cover.jpg?ts=1699946444"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">총학생회와 함께하는 커리어 콘서트</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <a href="https://delight.duksung.ac.kr/ko/program/all/view/1171"
+                                        class="btn btn-outline-secondary">딜라이트 ⇀</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 my-3">
+                        <div class="card" style="width: 17rem;">
+                            <img src="https://delight.duksung.ac.kr/attachment/view/24564/cover.jpg?ts=1697078296"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">2023학년도 과학기술대학 학술제 1부(BIT공학부)</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <a href="https://delight.duksung.ac.kr/ko/program/all/view/1150"
+                                        class="btn btn-outline-secondary">딜라이트 ⇀</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 my-3">
+                        <div class="card" style="width: 17rem;">
+                            <img src="https://delight.duksung.ac.kr/attachment/view/24508/cover.jpg?ts=1699244269"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">2023학년도 제2차 차미리사교양교육연구소 포럼</h5>
+                                <p class="card-text">
+                                    <span class="badge bg-secondary">온/오프라인</span>&nbsp&nbsp오프라인<br>
+                                    <span class="badge bg-secondary">신청기간</span>&nbsp&nbsp2023.10.06.(금) ~ 11.16.(목) 15시
+                                </p>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <a href="https://delight.duksung.ac.kr/ko/program/all/view/1147"
+                                        class="btn btn-outline-secondary">딜라이트 ⇀</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 my-3">
+                        <div class="card" style="width: 17rem;">
+                            <img src="https://delight.duksung.ac.kr/attachment/view/25733/cover.jpg?ts=1699946444"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">총학생회와 함께하는 커리어 콘서트</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <a href="https://delight.duksung.ac.kr/ko/program/all/view/1171"
+                                        class="btn btn-outline-secondary">딜라이트 ⇀</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 my-3">
+                        <div class="card" style="width: 17rem;">
+                            <img src="https://delight.duksung.ac.kr/attachment/view/24564/cover.jpg?ts=1697078296"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">2023학년도 과학기술대학 학술제 1부(BIT공학부)</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <a href="https://delight.duksung.ac.kr/ko/program/all/view/1150"
+                                        class="btn btn-outline-secondary">딜라이트 ⇀</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 목록 -->
+            <div class="col-3">
+                <div class="row mx-3">
+                    <h3>카테고리별 목록</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 페이지네이션 -->
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
