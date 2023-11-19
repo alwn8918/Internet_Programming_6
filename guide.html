@@ -19,6 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/card.css" rel="stylesheet">
 
 </head>
 
@@ -28,9 +29,10 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: rgb(95, 23, 52)">
+        <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar"
+            style="background-color: rgb(95, 23, 52)">
 
-            <!-- Sidebar - Brand -->
+            <!-- 덕성 홈페이지 -->
             <a class="sidebar-brand d-flex align-items-center" href="https://www.duksung.ac.kr/main.do">
                 <img src="duksung_logo.png" style="width: 90%;">
             </a>
@@ -38,101 +40,102 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard -->
+            <!-- 메인 화면 -->
             <li class="nav-item active">
                 <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Main</span></a>
+                    <span>메인 화면</span></a>
             </li>
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
+            <hr class="sidebar-divider my-0">
 
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Interface
-            </div>
+            <!-- 딜라이트 간단 안내 -->
+            <li class="nav-item active">
+                <a class="nav-link" href="guide.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>딜라이트 간단 안내</span></a>
+            </li>
 
-            <!-- Nav Item - Pages Collapse Menu -->
+            <!-- 네비게이션 - 안내(카테고리) - 활동유형 -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseKind"
+                    aria-expanded="true" aria-controls="collapseKind">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
+                    <span>활동유형</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapseKind" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Buttons</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
+                        <div class="collapse-item">대면 강의</div>
+                        <div class="collapse-item">온라인 실시간 강의</div>
+                        <div class="collapse-item">e-러닝</div>
+                        <div class="collapse-item">교내 대회</div>
+                        <div class="collapse-item">교외 활동</div>
+                        <div class="collapse-item">상담</div>
+                        <div class="collapse-item">자격증</div>
+                        <div class="collapse-item">기타</div>
                     </div>
                 </div>
             </li>
 
-            <!-- Nav Item - Utilities Collapse Menu -->
+            <!-- 네비게이션 - 안내(카테고리) - 정규편성 -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRegular"
+                    aria-expanded="true" aria-controls="collapseRegular">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
+                    <span>정규편성</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                <div id="collapseRegular" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
+                        <div class="collapse-item">...</div>
                     </div>
                 </div>
             </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Addons
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
+            <!-- 네비게이션 - 안내(카테고리) - 장학금 -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseScholarship"
+                    aria-expanded="true" aria-controls="collapseScholarship">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>장학금</span>
                 </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div id="collapseScholarship" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                        <div class="collapse-item">...</div>
                     </div>
                 </div>
             </li>
 
-            <!-- Nav Item - Charts -->
+            <!-- 네비게이션 - 안내(카테고리) - 참여단위 -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTeam"
+                    aria-expanded="true" aria-controls="collapseTeam">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>참여단위</span>
+                </a>
+                <div id="collapseTeam" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <div class="collapse-item">팀</div>
+                        <div class="collapse-item">개인</div>
+                    </div>
+                </div>
             </li>
 
             <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+            <hr class="sidebar-divider my-0">
+
+            <!-- 팀원 모집 -->
+            <li class="nav-item active">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>팀원 모집</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -170,41 +173,67 @@
                     </form>
                 </nav>
                 <!-- End of Topbar -->
-            </div>
-            <!-- End of Main Content -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                <!-- 게시물 -->
+                <div class="container py-5">
+                    <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+                        <!-- 카드 1개 -->
+                        <div class="col mb-4">
+                            <div class="card">
+                                <!-- admin에서 업로드한 이미지 -->
+                                <img src="https://delight.duksung.ac.kr/attachment/view/24508/cover.jpg?ts=1699244269" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <!-- admin에서 설정하는 제목 -->
+                                    <h5 class="card-title">2023학년도 제2차 차미리사교양교육연구소 포럼</h5>
+                                    <p class="card-text">
+                                        <span class="badge bg-secondary">신청기간</span>&nbsp&nbsp2023.10.06.(금) ~ 11.16.(목) 15시
+                                    </p>
+                                </div>
+                                <div class="mb-5 d-flex justify-content-around">
+                                    <a href="https://delight.duksung.ac.kr/ko/program/all/view/1147"
+                                        class="btn btn-delight" style="background-color: rgb(95, 23, 52);">딜라이트 ⇀</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </footer>
-            <!-- End of Footer -->
+                <!-- 게시물 끝 -->
+
+                </div>
+                <!-- End of Main Content -->
+
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; Your Website 2021</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
+
+            </div>
+            <!-- End of Content Wrapper -->
 
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- End of Page Wrapper -->
 
-    </div>
-    <!-- End of Page Wrapper -->
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+        <!-- Page level plugins -->
+        <script src="vendor/chart.js/Chart.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+        <!-- Page level custom scripts -->
+        <script src="js/demo/chart-area-demo.js"></script>
+        <script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
 
