@@ -13,14 +13,13 @@
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/sb-admin-2.css" rel="stylesheet">
     <link href="css/card.css" rel="stylesheet">
-
+    <link href="css/pagination.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -28,13 +27,19 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <!-- Sidebar -->
+        <!-- 사이드바 -->
         <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar"
             style="background-color: rgb(95, 23, 52)">
 
             <!-- 덕성 홈페이지 -->
-            <a class="sidebar-brand d-flex align-items-center" href="https://www.duksung.ac.kr/main.do">
-                <img src="duksung_logo.png" style="width: 90%;">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center"
+                href="https://www.duksung.ac.kr/main.do">
+                <div class="sidebar-brand-icon">
+                    <img src="img/duksung_logo.png" style="width: 90%;">
+                </div>
+                <div class="sidebar-brand-text">
+                    <img src="img/duksung.png" style="width: 90%;">
+                </div>
             </a>
 
             <!-- Divider -->
@@ -142,14 +147,13 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
         </ul>
-        <!-- End of Sidebar -->
+        <!-- 사이드바 끝 -->
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
             <div id="content">
-
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
@@ -175,65 +179,180 @@
                 <!-- End of Topbar -->
 
                 <!-- 게시물 -->
-                <div class="container py-5">
-                    <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+                <div class="container">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
                         <!-- 카드 1개 -->
                         <div class="col mb-4">
                             <div class="card">
                                 <!-- admin에서 업로드한 이미지 -->
-                                <img src="https://delight.duksung.ac.kr/attachment/view/24508/cover.jpg?ts=1699244269" class="card-img-top" alt="...">
+                                <img src="https://delight.duksung.ac.kr/attachment/view/24508/cover.jpg?ts=1699244269"
+                                    class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <!-- admin에서 설정하는 제목 -->
                                     <h5 class="card-title">2023학년도 제2차 차미리사교양교육연구소 포럼</h5>
                                     <p class="card-text">
-                                        <span class="badge bg-secondary">신청기간</span>&nbsp&nbsp2023.10.06.(금) ~ 11.16.(목) 15시
+                                        <span class="badge bg-delight">신청기간</span>&nbsp&nbsp2023.10.06.(금) ~ 11.16.(목)
+                                        15시
                                     </p>
                                 </div>
                                 <div class="mb-5 d-flex justify-content-around">
+                                    <!-- 딜라이트 링크 -->
                                     <a href="https://delight.duksung.ac.kr/ko/program/all/view/1147"
-                                        class="btn btn-delight" style="background-color: rgb(95, 23, 52);">딜라이트 ⇀</a>
+                                        class="btn btn-delight">딜라이트 ⇀</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-4">
+                            <div class="card">
+                                <!-- admin에서 업로드한 이미지 -->
+                                <img src="https://delight.duksung.ac.kr/attachment/view/25733/cover.jpg?ts=1699946444"
+                                    class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <!-- admin에서 설정하는 제목 -->
+                                    <h5 class="card-title">총학생회와 함께하는 커리어 콘서트</h5>
+                                    <p class="card-text">
+                                        <span class="badge bg-delight">신청기간</span>&nbsp&nbsp2023.10.06.(금) ~ 11.16.(목)
+                                        15시
+                                    </p>
+                                </div>
+                                <div class="mb-5 d-flex justify-content-around">
+                                    <a href="https://delight.duksung.ac.kr/ko/program/all/view/1171"
+                                        class="btn btn-delight">딜라이트 ⇀</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-4">
+                            <div class="card">
+                                <!-- admin에서 업로드한 이미지 -->
+                                <img src="https://delight.duksung.ac.kr/attachment/view/24564/cover.jpg?ts=1697078296"
+                                    class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <!-- admin에서 설정하는 제목 -->
+                                    <h5 class="card-title">2023학년도 과학기술대학 학술제 1부(BIT공학부)</h5>
+                                    <p class="card-text">
+                                        <span class="badge bg-delight">신청기간</span>&nbsp&nbsp2023.10.06.(금) ~ 11.16.(목)
+                                        15시
+                                    </p>
+                                </div>
+                                <div class="mb-5 d-flex justify-content-around">
+                                    <a href="https://delight.duksung.ac.kr/ko/program/all/view/1150"
+                                        class="btn btn-delight">딜라이트 ⇀</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-4">
+                            <div class="card">
+                                <!-- admin에서 업로드한 이미지 -->
+                                <img src="https://delight.duksung.ac.kr/attachment/view/24508/cover.jpg?ts=1699244269"
+                                    class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <!-- admin에서 설정하는 제목 -->
+                                    <h5 class="card-title">2023학년도 제2차 차미리사교양교육연구소 포럼</h5>
+                                    <p class="card-text">
+                                        <span class="badge bg-delight">신청기간</span>&nbsp&nbsp2023.10.06.(금) ~ 11.16.(목)
+                                        15시
+                                    </p>
+                                </div>
+                                <div class="mb-5 d-flex justify-content-around">
+                                    <!-- 딜라이트 링크 -->
+                                    <a href="https://delight.duksung.ac.kr/ko/program/all/view/1147"
+                                        class="btn btn-delight">딜라이트 ⇀</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-4">
+                            <div class="card">
+                                <!-- admin에서 업로드한 이미지 -->
+                                <img src="https://delight.duksung.ac.kr/attachment/view/25733/cover.jpg?ts=1699946444"
+                                    class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <!-- admin에서 설정하는 제목 -->
+                                    <h5 class="card-title">총학생회와 함께하는 커리어 콘서트</h5>
+                                    <p class="card-text">
+                                        <span class="badge bg-delight">신청기간</span>&nbsp&nbsp2023.10.06.(금) ~ 11.16.(목)
+                                        15시
+                                    </p>
+                                </div>
+                                <div class="mb-5 d-flex justify-content-around">
+                                    <a href="https://delight.duksung.ac.kr/ko/program/all/view/1171"
+                                        class="btn btn-delight">딜라이트 ⇀</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-4">
+                            <div class="card">
+                                <!-- admin에서 업로드한 이미지 -->
+                                <img src="https://delight.duksung.ac.kr/attachment/view/24564/cover.jpg?ts=1697078296"
+                                    class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <!-- admin에서 설정하는 제목 -->
+                                    <h5 class="card-title">2023학년도 과학기술대학 학술제 1부(BIT공학부)</h5>
+                                    <p class="card-text">
+                                        <span class="badge bg-delight">신청기간</span>&nbsp&nbsp2023.10.06.(금) ~ 11.16.(목)
+                                        15시
+                                    </p>
+                                </div>
+                                <div class="mb-5 d-flex justify-content-around">
+                                    <a href="https://delight.duksung.ac.kr/ko/program/all/view/1150"
+                                        class="btn btn-delight">딜라이트 ⇀</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- 게시물 끝 -->
-
-                </div>
-                <!-- End of Main Content -->
-
-                <!-- Footer -->
-                <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Your Website 2021</span>
-                        </div>
-                    </div>
-                </footer>
-                <!-- End of Footer -->
-
             </div>
-            <!-- End of Content Wrapper -->
+            <!-- End of Main Content -->
+
+            <!-- 페이지네이션 -->
+            <div class="container" id="container-pag">
+                <div class="pagination p1">
+                    <ul>
+                      <a href="#"><li><<</li></a>
+                      <a href="#"><li>1</li></a>
+                      <a href="#"><li>2</li></a>
+                      <a href="#"><li>3</li></a>
+                      <a href="#"><li>4</li></a>
+                      <a href="#"><li>5</li></a>
+                      <a href="#"><li>6</li></a>
+                      <a href="#"><li>>></li></a>
+                    </ul>
+                </div>
+            </div>
+            <!-- 페이지네이션 끝 -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
 
         </div>
-        <!-- End of Page Wrapper -->
+        <!-- End of Content Wrapper -->
 
-        <!-- Bootstrap core JavaScript-->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    </div>
+    <!-- End of Page Wrapper -->
 
-        <!-- Core plugin JavaScript-->
-        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-        <!-- Custom scripts for all pages-->
-        <script src="js/sb-admin-2.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-        <!-- Page level plugins -->
-        <script src="vendor/chart.js/Chart.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
 
-        <!-- Page level custom scripts -->
-        <script src="js/demo/chart-area-demo.js"></script>
-        <script src="js/demo/chart-pie-demo.js"></script>
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
 
