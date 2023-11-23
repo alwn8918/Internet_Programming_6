@@ -61,7 +61,7 @@
 
         <!-- 딜라이트 간단 안내 -->
         <li class="nav-item active">
-            <a class="nav-link" href="guide.html">
+            <a class="nav-link" href="/guide">
                 <i class="fas fa-fw fa-search"></i>
                 <span>딜라이트 안내</span></a>
         </li>
@@ -183,7 +183,7 @@
                 <div class="card-content">
                     <div class="row row-cols-1 row-cols-md-3 g-4">
                         <!-- 카드 1개 -->
-                        {% for g in guides %}
+                        {% for g in guide_list %}
                         <div class="card col mb-4">
                             <!-- admin에서 업로드한 이미지 -->
                             <img src="{{ g.image }}"
@@ -193,6 +193,11 @@
                                 <h5 class="card-title">{{ g.title }}</h5>
                                 <p class="card-text">
                                     <span class="badge bg-delight">신청기간</span>&nbsp&nbsp{{ g.period }}
+
+                                    {% if g.category %}
+                                        <span class="badge bg-delight">장학금</span>&nbsp&nbsp{{ g.category }}
+                                    {% endif %}
+
                                 </p>
                             </div>
                             <div class="mb-5 d-flex justify-content-around">
