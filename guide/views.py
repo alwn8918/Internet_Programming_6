@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Guide
+from .models import Guide, Category
 
 def guide(request):
     guides = Guide.objects.all()
