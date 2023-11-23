@@ -222,6 +222,18 @@ hr {
   }
 }
 
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1500px;
+  }
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -391,7 +403,6 @@ hr {
 .btn-primary {
   color: #fff;
   background-color: #4e73df;
-  border-color: #4e73df;
 }
 
 .btn-primary:hover {
@@ -575,7 +586,7 @@ hr {
 
 .btn-link {
   font-weight: 400;
-  color: #4e73df;
+  color: rgb(95, 23, 52);
   text-decoration: none;
 }
 
