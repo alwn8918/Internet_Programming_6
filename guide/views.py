@@ -41,6 +41,19 @@ def tagtype_page(request, slug):
         }
     )
 
+def tagteam_page(request, slug):
+    tagteam = TagTeam.objects.get(slug=slug)
+
+    return render (
+        request,
+        'guide/guide.html',
+        {
+            'guide_list': Guide.objects.filter(tagteam=tagteam),
+            'tagteam': tagteam,
+            'tagteams':TagTeam.objects.all(),
+        }
+    )
+
 class GuideList(ListView):
     model = Guide
     template_name = 'guide/guide.html'
@@ -49,4 +62,5 @@ class GuideList(ListView):
         context = super(GuideList, self).get_context_data()
         context['categories'] = Category.objects.all()
         context['tagtypes'] = TagType.objects.all()
+        context['tagteams'] = TagTeam.objects.all()
         return context

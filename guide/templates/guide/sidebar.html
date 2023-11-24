@@ -83,8 +83,11 @@
         <div id="collapseTeam" class="collapse" aria-labelledby="headingUtilities"
              data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <div class="collapse-item">팀</div>
-                <div class="collapse-item">개인</div>
+                {% for tagteam in tagteams %}
+                <div class="collapse-item">
+                    <a href="{{ tagteam.get_absolute_url }}">{{ tagteam.name }}</a>
+                </div>
+                {% endfor %}
             </div>
         </div>
     </li>
