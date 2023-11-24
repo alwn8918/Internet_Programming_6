@@ -1,0 +1,112 @@
+{% load static %}
+
+<!-- 사이드바 -->
+<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar"
+    style="background-color: rgb(95, 23, 52)">
+
+    <!-- 덕성 홈페이지 -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center"
+       href="https://www.duksung.ac.kr/main.do">
+        <div class="sidebar-brand-icon">
+            <img src="{% static 'guide/img/duksung_logo.png' %}" style="width: 90%;">
+        </div>
+        <div class="sidebar-brand-text">
+            <img src="{% static 'guide/img/duksung.png' %}" style="width: 90%;">
+        </div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- 메인 화면 -->
+    <li class="nav-item active">
+        <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-home"></i>
+            <span>메인 화면</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- 딜라이트 간단 안내 -->
+    <li class="nav-item active">
+        <a class="nav-link" href="/guide">
+            <i class="fas fa-fw fa-search"></i>
+            <span>딜라이트 안내</span></a>
+    </li>
+
+    <!-- 네비게이션 - 안내(카테고리) - 활동유형 -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseKind"
+           aria-expanded="true" aria-controls="collapseKind">
+            <i class="fas fa-fw fa-chalkboard-teacher"></i>
+            <span>활동유형</span>
+        </a>
+        <div id="collapseKind" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <div class="collapse-item">대면 강의</div>
+                <div class="collapse-item">온라인 실시간 강의</div>
+                <div class="collapse-item">e-러닝</div>
+                <div class="collapse-item">교내 대회</div>
+                <div class="collapse-item">교외 활동</div>
+                <div class="collapse-item">상담</div>
+                <div class="collapse-item">자격증</div>
+                <div class="collapse-item">기타</div>
+            </div>
+        </div>
+    </li>
+
+    <!-- 네비게이션 - 안내(카테고리) - 장학금 -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseScholarship"
+           aria-expanded="true" aria-controls="collapseScholarship">
+            <i class="fas fa-fw fa-money-bill-wave"></i>
+            <span>장학금</span>
+        </a>
+        <div id="collapseScholarship" class="collapse" aria-labelledby="headingUtilities"
+             data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                {% for category in categories %}
+                <div class="collapse-item">
+                    <a href="{{ category.get_absolute_url }}">{{ category }}</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </li>
+
+    <!-- 네비게이션 - 안내(카테고리) - 참여단위 -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTeam"
+           aria-expanded="true" aria-controls="collapseTeam">
+            <i class="fas fa-fw fa-user"></i>
+            <span>참여단위</span>
+        </a>
+        <div id="collapseTeam" class="collapse" aria-labelledby="headingUtilities"
+             data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <div class="collapse-item">팀</div>
+                <div class="collapse-item">개인</div>
+            </div>
+        </div>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- 팀원 모집 -->
+    <li class="nav-item active">
+        <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-comment"></i>
+            <span>팀원 모집</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+</ul>
+<!-- 사이드바 끝 -->
