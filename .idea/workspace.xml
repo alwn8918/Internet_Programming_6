@@ -5,12 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6961d1c-62fe-4831-b804-bbe9b59e2c0f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/guide/templates/guide/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guide/templates/guide/pagination.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guide/templates/guide/sidebar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guide/templates/guide/topbar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guide/migrations/0009_alter_guide_tag_alter_tag_slug.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guide/migrations/0010_tagtype_remove_guide_tag_delete_tag_guide_tagtype.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guide/migrations/0011_alter_guide_tagtype.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guide/migrations/0012_tagteam_guide_tagteam.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/guide/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/guide/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/guide/templates/guide/guide.html" beforeDir="false" afterPath="$PROJECT_DIR$/guide/templates/guide/guide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide/templates/guide/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/guide/templates/guide/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/guide/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/guide/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

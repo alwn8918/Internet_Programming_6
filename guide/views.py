@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView
-from .models import Guide, Category
+from .models import Guide, Category, TagType, TagTeam
 
 def guide(request):
     guides = Guide.objects.all()
@@ -28,6 +28,19 @@ def category_page(request, slug):
         }
     )
 
+def tagtype_page(request, slug):
+    tagtype = TagType.objects.get(slug=slug)
+
+    return render (
+        request,
+        'guide/guide.html',
+        {
+            'guide_list': Guide.objects.filter(tagtype=tagtype),
+            'tagtype': tagtype,
+            'tagtypes':TagType.objects.all(),
+        }
+    )
+
 class GuideList(ListView):
     model = Guide
     template_name = 'guide/guide.html'
@@ -35,4 +48,5 @@ class GuideList(ListView):
     def get_context_data(self, **kwargs):
         context = super(GuideList, self).get_context_data()
         context['categories'] = Category.objects.all()
+        context['tagtypes'] = TagType.objects.all()
         return context

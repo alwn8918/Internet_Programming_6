@@ -44,16 +44,14 @@
         </a>
         <div id="collapseKind" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <div class="collapse-item">대면 강의</div>
-                <div class="collapse-item">온라인 실시간 강의</div>
-                <div class="collapse-item">e-러닝</div>
-                <div class="collapse-item">교내 대회</div>
-                <div class="collapse-item">교외 활동</div>
-                <div class="collapse-item">상담</div>
-                <div class="collapse-item">자격증</div>
-                <div class="collapse-item">기타</div>
+                {% for tagtype in tagtypes %}
+                <div class="collapse-item">
+                    <a href="{{ tagtype.get_absolute_url }}">{{ tagtype.name }}</a>
+                </div>
+                {% endfor %}
             </div>
         </div>
+
     </li>
 
     <!-- 네비게이션 - 안내(카테고리) - 장학금 -->

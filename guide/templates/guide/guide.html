@@ -55,12 +55,24 @@
                                 <!-- admin에서 설정하는 제목 -->
                                 <h5 class="card-title">{{ g.title }}</h5>
                                 <p class="card-text">
-                                    <span class="badge bg-delight">신청기간</span>&nbsp&nbsp{{ g.period }}
-
+                                    <span class="badge bg-delight">신청기간</span>&nbsp;&nbsp;{{ g.period }}
+                                    <br/>
                                     {% if g.category %}
-                                        <span class="badge bg-delight">장학금</span>&nbsp&nbsp{{ g.category }}
+                                        <span class="badge bg-delight">장학금</span>&nbsp;&nbsp;{{ g.category }}
                                     {% endif %}
-
+                                    <br/>
+                                    {% if g.tagtype.exists %}
+                                    {% for tagtype in g.tagtype.iterator %}
+                                        <span class="badge bg-delight">활동유형</span>&nbsp;&nbsp;{{ tagtype }}
+                                    {% endfor %}
+                                    {% endif %}
+                                    <br/>
+                                    {% if g.tagteam.exists %}
+                                    <span class="badge bg-delight">참여단위</span>
+                                    {% for tagteam in g.tagteam.iterator %}
+                                        &nbsp;{{ tagteam }}
+                                    {% endfor %}
+                                    {% endif %}
                                 </p>
                             </div>
                             <div class="mb-5 d-flex justify-content-around">
