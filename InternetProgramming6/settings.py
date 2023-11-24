@@ -127,3 +127,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, '_media')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# 로그인 성공 시 main으로 이동
+LOGIN_REDIRECT_URL = '/'
+
+# 로그아웃 시 main으로 이동
+LOGOUT_REDIRECT_URL = '/'

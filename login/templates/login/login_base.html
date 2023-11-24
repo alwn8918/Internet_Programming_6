@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+    <link href="{% static 'login/css/login.css' %}" rel="stylesheet">
+</head>
+<body>
+
+{% block content %}
+{% endblock %}
+
+    <div>
+        <button class="back" onclick="location.href='/'"><< back</button>
+    </div>
+    <script src="{% static 'login/js/login.js' %}"></script>
+    </body>
+    </html>
