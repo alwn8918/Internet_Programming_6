@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f6961d1c-62fe-4831-b804-bbe9b59e2c0f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guide/templates/guide/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/guide/templates/guide/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide/templates/guide/guide.html" beforeDir="false" afterPath="$PROJECT_DIR$/guide/templates/guide/guide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide/templates/guide/topbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/guide/templates/guide/topbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/guide/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/guide/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/guide/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/guide/views.py" afterDir="false" />
     </list>
@@ -43,7 +44,7 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "guide__tag",
+    "git-widget-placeholder": "search",
     "last_opened_file_path": "C:/Users/miju/Desktop/InternetProgramming6",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }

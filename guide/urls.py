@@ -6,4 +6,5 @@ urlpatterns = [
     path('category/<str:slug>/', views.category_page),
     path('tagtype/<str:slug>/', views.tagtype_page),
     path('tagteam/<str:slug>/', views.tagteam_page),
+    path('search/<str:q>/', views.GuideSearch.as_view()),
 ]
