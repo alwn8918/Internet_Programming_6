@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView
 from .models import Guide, Category, TagType, TagTeam
+from django.db.models import Q
 
 def guide(request):
     guides = Guide.objects.all()
@@ -63,4 +64,19 @@ class GuideList(ListView):
         context['categories'] = Category.objects.all()
         context['tagtypes'] = TagType.objects.all()
         context['tagteams'] = TagTeam.objects.all()
+        return context
+
+class GuideSearch(GuideList):
+    def get_queryset(self):
+        q = self.kwargs['q']
+        guide_list = Guide.objects.filter(
+            Q(title__contains=q)
+        ).distinct()
+        return guide_list
+
+    def get_context_data(self, **kwargs):
+        context = super(GuideSearch, self).get_context_data()
+        q = self.kwargs['q']
+        context['search_info'] = f'Search: {q} ({self.get_queryset().count()})'
+
         return context
