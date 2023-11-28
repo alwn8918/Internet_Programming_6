@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>로그인</title>
-    <link href="{% static 'login/css/login.css' %}" rel="stylesheet">
-</head>
-<body>
+{% extends "login_base.html" %}
+{% block content %}
+
 <div class="container" id="container">
     <div class="form-container sign-up-container">
         <form action="#">
@@ -18,11 +12,21 @@
         </form>
     </div>
     <div class="form-container sign-in-container">
-        <form action="#">
-            <h1>sign in</h1><br/>
-            <input type="email" placeholder="email"/>
-            <input type="password" placeholder="password"/><br/>
-            <button>sign in</button>
+        <form method="POST" action="{% url 'login:login' %}">
+            <h1>회원 로그인</h1><br/>
+            {% csrf_token %}
+            {% for filed in form %}
+            <div class = "form-group">
+                <label for = "{{ field.id_for_label }}">{{ field.label }}</label> 
+            <input type="{{ field.field.widget.input_type }}" class="form-control" id="{{ field.id_for_label }}" placeholder="학번 또는 사번" name = "{{ field.name }}"/>
+            <input type="password" placeholder="패스워드"/><br/>
+            </div>
+            {% if field.errors %}                                                              (3)
+            <span style="color: red">{{ field.errors }}</span>
+            {% endif %}
+            {% endfor %}
+
+            <button type = "submit" class="btn btn-primary">로그인</button>
         </form>
     </div>
     <div class="overlay-container">
@@ -41,9 +45,5 @@
     </div>
 </div>
 <br/><br/>
-<div>
-    <button class="back"><a href="../guide/" style="color: rgb(95, 23, 52)"><< back</a></button>
-</div>
-<script src="{% static 'login/js/login.js' %}"></script>
-</body>
-</html>
+
+{% endblock %}
