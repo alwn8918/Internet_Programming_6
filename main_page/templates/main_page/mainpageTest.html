@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>mainpage</title>
+
+    <link rel="stylesheet" href="{% static 'main_page/css/styles.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Hahmlet:wght@100;300;800&family=IBM+Plex+Sans+KR:wght@200;300;400;500;600&display=swap"
+            rel="stylesheet">
+
+    <link href="{% static 'guide/vendor/fontawesome-free/css/all.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link href="{% static 'guide/css/sb-admin-2.css' %}" rel="stylesheet">
+    <link href="{% static 'guide/css/card.css' %}" rel="stylesheet">
+    <link href="{% static 'guide/css/pagination.css' %}" rel="stylesheet">
+    <link href="{% static 'guide/css/login.css' %}" rel="stylesheet">
+
+    <script src="{% static 'guide/vendor/jquery/jquery.min.js' %}"></script>
+</head>
+
+<body id="page-top">
+
+<div id="wrapper">
+
+    {% include 'guide/sidebar.html' %}
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            {% include 'guide/topbar.html' %}
+
+            <!--슬라이드 배너-->
+            <div id="slideshow-container">
+                <div class="mySlides">
+                    <img class="slide-img" src="https://delight.duksung.ac.kr/ko/program/all/view/1192" alt="이미지 1">
+                </div>
+
+                <div class="mySlides">
+                    <img class="slide-img" src="이미지2.jpg" alt="이미지 2">
+                </div>
+
+                <div class="mySlides">
+                    <img class="slide-img" src="이미지3.jpg" alt="이미지 3">
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#9664;</a>
+                <a class="next" onclick="plusSlides(1)"> &#9654;</a>
+            </div>
+
+            <!-- 팝업 버튼 -->
+            <button class="popup-btn" onclick="openPopup()">
+                <img src="https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../releases/preview/2012/png/iconmonstr-calendar-7.png&r=0&g=0&b=0"
+                     alt="popup button">
+            </button>
+
+            <div class="popup" id="popup">
+                <div class="popup-content">
+                    <button class="close-btn" onclick="closePopup()">&#10006;</button>
+                    <iframe src="c:\인프-프로젝트\AngularBootstrapCalendar\index.html" width="100%" height="100%"></iframe>
+                </div>
+            </div>
+
+        </div>
+
+        {% include 'guide/footer.html' %}
+
+    </div>
+</div>
+
+
+<script>
+    function openPopup() {
+   document.getElementById('popup').style.display = 'flex';
+ }
+
+ function closePopup() {
+   document.getElementById('popup').style.display = 'none';
+ }
+
+   let slideIndex = 0;
+   showSlides();
+
+   function showSlides() {
+       let i;
+       const slides = document.getElementsByClassName("mySlides");
+
+       for (i = 0; i < slides.length; i++) {
+           slides[i].style.display = "none";
+       }
+
+       slideIndex++;
+
+       if (slideIndex > slides.length) {
+           slideIndex = 1;
+       }
+
+       slides[slideIndex - 1].style.display = "block";
+       setTimeout(showSlides, 2000); // 2초마다 이미지 변경 (2000ms)
+   }
+
+   function plusSlides(n) {
+       showSlides(slideIndex += n);
+   }
+
+   // 팝업 창 열기
+   document.getElementById('popupBtn').onclick = function () {
+           document.getElementById('myModal').style.display = "block";
+           document.getElementById('img01').src = document.getElementsByClassName("mySlides")[slideIndex - 1].getElementsByTagName("img")[0].src;
+       };
+
+       // 팝업 창 닫기
+   function closeModal() {
+           document.getElementById('myModal').style.display = "none";
+       }
+</script>
+
+<!-- Bootstrap core JavaScript-->
+<script src="{% static 'guide/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="{% static 'guide/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="{% static 'guide/js/sb-admin-2.min.js' %}"></script>
+
+<!-- Page level plugins -->
+<script src="{% static 'guide/vendor/chart.js/Chart.min.js' %}"></script>
+
+<!-- Page level custom scripts -->
+<script src="{% static 'guide/js/demo/chart-area-demo.js' %}"></script>
+<script src="{% static 'guide/js/demo/chart-pie-demo.js' %}"></script>
+
+</body>
+
+</html>
