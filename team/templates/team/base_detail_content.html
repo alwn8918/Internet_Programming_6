@@ -162,10 +162,9 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse_{{ main_category.slug }}"
             aria-expanded="true" aria-controls="collapse_{{ main_category.slug }}" >
             <i class="fas fa-fw fa-chalkboard-teacher"></i>
-            <input class="form-check-input" type="checkbox" value="{{ main_category.slug }}" id="{{ main_category.slug }}_checkbox" onclick="test('{{ main_category.slug }}', event)"{% if main_category.id in selectedCategories.main %}checked{% endif %}>
+<!--            <input class="form-check-input" type="checkbox" value="{{ main_category.slug }}" id="{{ main_category.slug }}_checkbox" onclick="test('{{ main_category.slug }}', event)"{% if main_category.id in selectedCategories.main %}checked{% endif %}>-->
             <span class="category-span">{{ main_category.name }}</span>
         </a>
-        <a><input type="checkbox" value="'test">input in a</a>
         <div id="collapse_{{ main_category.slug }}" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 {% for sub_category in main_category.subcategory_set.all %}
@@ -231,15 +230,9 @@
 
 
 
-                {% if pk %}
-                {% block test %}
-                <div>if pk</div>
+                {% block detail_content %}
                 {% endblock %}
-                {% else %}
-                {% block content %}
-                <div>else pk</div>
-                {% endblock %}
-                {% endif %}
+
 
 
             </div>

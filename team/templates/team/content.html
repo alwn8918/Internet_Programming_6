@@ -1,6 +1,6 @@
-{% extends 'team/team_matching.html' %}
+{% extends 'team/base_content.html' %}
 
-{% block main_area %}
+{% block content %}
 
 <style>
 <!--    .filter-container {-->
@@ -79,7 +79,7 @@
                         </div>
 
                         <div class="mb-5 d-flex justify-content-around">
-                            <a href="{{ post.delight_link }}" class="btn btn-delight">Read More &rarr;</a>
+                            <a href="{{ post.get_absolute_url }}" class="btn btn-delight">Read More &rarr;</a>
                         </div>
 
                         <div class="card-footer text-muted">
