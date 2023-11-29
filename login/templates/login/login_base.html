@@ -18,7 +18,7 @@
 {% endif %}
 
     <div> <!-- 수정 - logout 아닌 것도, 버튼 아니라 a 태그인 거...해결 가능한가 -->
-        <a class="btn btn-login" href="{% url 'login:logout' %}">← 메인화면</a>
+        <a class="btn btn-login" href="{% url 'main_page:main_page' %}">← 메인화면</a>
     </div>
     <script src="{% static 'login/js/login.js' %}"></script>
     </body>
