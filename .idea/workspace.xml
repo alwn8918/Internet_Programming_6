@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6961d1c-62fe-4831-b804-bbe9b59e2c0f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/main_page/static/main_page/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main_page/static/main_page/js/example.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main_page/static/main_page/js/helpers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main_page/templates/main_page/calendarControls.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main_page/templates/main_page/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main_page/templates/main_page/mainpageTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main_page/templates/main_page/modalcontent.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main_page/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InternetProgramming6/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/InternetProgramming6/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InternetProgramming6/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/InternetProgramming6/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guide/templates/guide/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/guide/templates/guide/sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_page/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_page/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide/static/guide/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/guide/static/guide/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/templates/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login/templates/login/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/templates/login/login_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/login/templates/login/login_base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +44,7 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "mainpage__develop",
+    "git-widget-placeholder": "guide__fix",
     "last_opened_file_path": "C:/Users/miju/Desktop/InternetProgramming6/guide/templates/guide",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
