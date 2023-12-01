@@ -26,21 +26,30 @@
         padding: 25px
     }
 
-
-
-
 </style>
 
 <!-- 게시물 -->
 <div class="container">
     <div class="row">
-        {% if team_matching_posts %}
-        <!-- Main Content Column -->
-        <div class="main-content-container col-md-9">
-            <div class="card-container row row-cols-1 row-cols-md-3 g-4">
+
+<!-- 포스트 생성 -->
+    {% if user.is_authenticated %}
+    {% if user.is_superuser or user.is_staff %}
+        <div class="mb-5 d-flex justify-content-around">
+            <a href="/team/create_post/" class="btn btn-delight">NEW POST</a>
+        </div>
+    {% endif %}
+    {% endif %}
+
+
+    {% if team_matching_posts %}
+    <!-- Main Content Column -->
+    <div class="main-content-container col-md-9">
+        <div class="card-container row row-cols-1 row-cols-md-3 g-4">
+
+    </form>
                 <!-- 카드 1개 -->
                 {% for post in team_matching_posts %}
-
                 <div class="col mb-4">
                     <div class="card">
                         <div class="card-body">
@@ -91,38 +100,13 @@
                 {% endfor %}
             </div>
         </div>
+
         {% else %}
         <!-- Display some default content or a message when there are no guides -->
         <div class="main-content-container col-md-12">
             <p>포스트가 없습니다</p>
         </div>
         {% endif %}
-
-        <!-- Filter Column -->
-        <div class="filter-container col-md-3">
-            <div class="">
-                <!-- Adjust content as needed -->
-                <div class="filter-container">
-                    <!-- Main Category Filter -->
-                    <h3>Main Category</h3>
-                    <ul>
-                        {% for main_category in main_categories %}
-                            <li><a href="#" class="main-category">{{ main_category.name }}</a></li>
-                            <!-- Add appropriate links or actions for each main category -->
-                        {% endfor %}
-                    </ul>
-
-                    <!-- Sub Category Filter -->
-                    <h3>Sub Category</h3>
-                    <ul>
-                        {% for sub_category in sub_categories %}
-                            <li class="sub-category hidden">{{ sub_category.name }}</li>
-                            <!-- Add appropriate links or actions for each sub category -->
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 <!-- 게시물 끝 -->

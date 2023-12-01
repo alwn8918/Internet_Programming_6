@@ -105,7 +105,7 @@ sup {
 }
 
 a {
-  color: #4e73df;
+  color: #3a3b45;
   text-decoration: none;
   background-color: transparent;
 }
@@ -219,6 +219,18 @@ hr {
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1500px;
   }
 }
 
@@ -391,7 +403,6 @@ hr {
 .btn-primary {
   color: #fff;
   background-color: #4e73df;
-  border-color: #4e73df;
 }
 
 .btn-primary:hover {
@@ -575,7 +586,7 @@ hr {
 
 .btn-link {
   font-weight: 400;
-  color: #4e73df;
+  color: rgb(95, 23, 52);
   text-decoration: none;
 }
 

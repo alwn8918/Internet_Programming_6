@@ -15,9 +15,6 @@
 </script>
 
 
-
-
-
 <head>
 
     <meta charset="utf-8">
@@ -26,7 +23,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>안내 페이지</title>
+    <title>팀원 모집 게시글</title>
 
     <!-- Custom fonts for this template-->
     <link href="{% static 'guide/vendor/fontawesome-free/css/all.css' %}" rel="stylesheet" type="text/css">
@@ -78,73 +75,6 @@
                 <a class="nav-link" href="guide.html">
                     <i class="fas fa-fw fa-search"></i>
                     <span>딜라이트 안내</span></a>
-            </li>
-
-<!--            &lt;!&ndash; 네비게이션 - 안내(카테고리) - 활동유형 &ndash;&gt;-->
-<!--            <li class="nav-item">-->
-<!--                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseKind"-->
-<!--                    aria-expanded="true" aria-controls="collapseKind">-->
-<!--                    <i class="fas fa-fw fa-chalkboard-teacher"></i>-->
-<!--                    <span>활동유형</span>-->
-<!--                </a>-->
-<!--                <div id="collapseKind" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">-->
-<!--                    <div class="bg-white py-2 collapse-inner rounded">-->
-<!--                        <div class="collapse-item">대면 강의</div>-->
-<!--                        <div class="collapse-item">온라인 실시간 강의</div>-->
-<!--                        <div class="collapse-item">e-러닝</div>-->
-<!--                        <div class="collapse-item">교내 대회</div>-->
-<!--                        <div class="collapse-item">교외 활동</div>-->
-<!--                        <div class="collapse-item">상담</div>-->
-<!--                        <div class="collapse-item">자격증</div>-->
-<!--                        <div class="collapse-item">기타</div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </li>-->
-
-<!--            &lt;!&ndash; 네비게이션 - 안내(카테고리) - 정규편성 &ndash;&gt;-->
-<!--            <li class="nav-item">-->
-<!--                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRegular"-->
-<!--                    aria-expanded="true" aria-controls="collapseRegular">-->
-<!--                    <i class="fas fa-fw fa-clock"></i>-->
-<!--                    <span>정규편성</span>-->
-<!--                </a>-->
-<!--                <div id="collapseRegular" class="collapse" aria-labelledby="headingUtilities"-->
-<!--                    data-parent="#accordionSidebar">-->
-<!--                    <div class="bg-white py-2 collapse-inner rounded">-->
-<!--                        <div class="collapse-item">...</div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </li>-->
-
-<!--            &lt;!&ndash; 네비게이션 - 안내(카테고리) - 장학금 &ndash;&gt;-->
-<!--            <li class="nav-item">-->
-<!--                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseScholarship"-->
-<!--                    aria-expanded="true" aria-controls="collapseScholarship">-->
-<!--                    <i class="fas fa-fw fa-money-bill-wave"></i>-->
-<!--                    <span>장학금</span>-->
-<!--                </a>-->
-<!--                <div id="collapseScholarship" class="collapse" aria-labelledby="headingUtilities"-->
-<!--                    data-parent="#accordionSidebar">-->
-<!--                    <div class="bg-white py-2 collapse-inner rounded">-->
-<!--                        <div class="collapse-item">...</div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </li>-->
-
-            <!-- 네비게이션 - 안내(카테고리) - 참여단위 -->
-            <li class="nav-item">
-                <form class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTeam"
-                    aria-expanded="true" aria-controls="collapseTeam">
-                    <i class="fas fa-fw fa-user"></i>
-                    <input class="form-check-input" type="checkbox" value="input-collapseTeam" id="collapseTeam_checkbox" onclick="test('collapseTeam_checkbox', event)" >
-                    <span>참여단위</span>
-                </form>
-                <div id="collapseTeam" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <div class="collapse-item">개인</div>
-                    </div>
-                </div>
             </li>
 
             <!-- Divider -->
@@ -239,31 +169,9 @@
             <!-- End of Main Content -->
 
             <!-- 페이지네이션 -->
-            <div class="container" id="container-pag">
-                <div class="pagination p1">
-                    <ul>
-                      <a href="#"><li><<</li></a>
-                      <a href="#"><li>1</li></a>
-                      <a href="#"><li>2</li></a>
-                      <a href="#"><li>3</li></a>
-                      <a href="#"><li>4</li></a>
-                      <a href="#"><li>5</li></a>
-                      <a href="#"><li>6</li></a>
-                      <a href="#"><li>>></li></a>
-                    </ul>
-                </div>
-            </div>
-            <!-- 페이지네이션 끝 -->
-
+        {% include 'team/pagination.html' %}
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
+        {% include 'team/footer.html' %}
 
         </div>
         <!-- End of Content Wrapper -->
