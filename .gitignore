@@ -1,0 +1,19 @@
+# PyCharm files
+.idea/
+
+# Virtual environment
+venv/
+
+# Compiled Python files
+*.pyc
+__pycache__/
+
+# Django development files
+*.log
+db.sqlite3
+
+# Ignore the migration directory for each app
+guide/migrations/
+login/migrations/
+main_page/migrations/
+team/migrations/
