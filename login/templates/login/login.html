@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>로그인</title>
-    <link href="{% static 'login/css/login.css' %}" rel="stylesheet">
-</head>
-<body>
+{% extends "login/login_base.html" %}
+{% block content %}
+
 <div class="container" id="container">
+    <!--
     <div class="form-container sign-up-container">
         <form action="#">
             <h1>Create Account</h1><br/>
@@ -17,33 +12,57 @@
             <button>Sign Up</button>
         </form>
     </div>
+-->
     <div class="form-container sign-in-container">
-        <form action="#">
-            <h1>sign in</h1><br/>
-            <input type="email" placeholder="email"/>
-            <input type="password" placeholder="password"/><br/>
-            <button>sign in</button>
+        <form method="POST" action="{% url 'login:login' %}">
+            <h1>회원 로그인</h1><br/>
+            {% csrf_token %}
+            {% include 'login/form_errors.html' %}
+            <div>
+                <label>학번 또는 사번</label>
+                <input type="text" name="username" id="username">
+            </div>
+            <div>
+                <label>비밀번호</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <!-- {{ form.as_p }} -->
+            <!--
+            {% for filed in form %}
+            <div class = "form-group">
+                <label for = "{{ field.id_for_label }}">{{ field.label }}</label> 
+            <input type="{{ field.field.widget.input_type }}" class="form-control" id="{{ field.id_for_label }}" placeholder="{{ field.label }}" name = "{{ field.name }}"/>
+            </div>
+        -->
+
+        <!--
+            {% if field.errors %}                                                             
+            <span style="color: red">{{ field.errors }}</span>
+            {% endif %}
+            {% endfor %}
+        -->    
+
+            <br>
+            <button type = "submit" class="btn btn-primary">로그인</button>
+        
+        
         </form>
     </div>
     <div class="overlay-container">
         <div class="overlay">
-            <div class="overlay-panel overlay-left">
+            <!--<div class="overlay-panel overlay-left">
                 <h1>Welcome Back!</h1>
                 <p>To keep connected with us please login with your personal info</p>
                 <button class="ghost" id="signIn">Sign In</button>
-            </div>
+            </div>-->
             <div class="overlay-panel overlay-right">
-                <h1>Hello, Friend!</h1>
-                <p>Enter your personal details and start journey with us</p>
-                <button class="ghost" id="signUp">Sign Up</button>
+                <h1>계정을 잊었다면?</h1>
+                <p>덕성여자대학교 포털시스템에서<br>학번 조회, 비밀번호 초기화가 가능합니다.</p>
+                <button class="ghost" onclick="location.href='https://portal.duksung.ac.kr/'">바로가기</button>
             </div>
         </div>
     </div>
 </div>
 <br/><br/>
-<div>
-    <button class="back"><< back</button>
-</div>
-<script src="{% static 'login/js/login.js' %}"></script>
-</body>
-</html>
+
+{% endblock %}

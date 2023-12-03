@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+    <link href="{% static 'login/css/login.css' %}" rel="stylesheet">
+
+</head>
+<body>
+{% if user.is_authenticated %}
+<div>이미 <strong>{{ user.username }}</strong> 으로 로그인 하였습니다.</div>
+<br><br>
+
+
+{% else %}
+{% block content %}
+{% endblock %}
+{% endif %}
+
+    <div> <!-- 수정 - logout 아닌 것도, 버튼 아니라 a 태그인 거...해결 가능한가 -->
+        <button class="back" style="color: rgb(95, 23, 52)">
+            <a href="/main_page/">
+                ← 메인화면
+            </a>
+        </button>
+    </div>
+    <script src="{% static 'login/js/login.js' %}"></script>
+    </body>
+    </html>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="37a411bd-3d48-4376-ad05-24d46dcea698" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/guide/migrations/0006_tag_guide_tag.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guide/migrations/0007_category_guide_category.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guide/migrations/0008_alter_category_options.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guide/migrations/0009_alter_guide_tag_alter_tag_slug.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guide/migrations/0010_tagtype_remove_guide_tag_delete_tag_guide_tagtype.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guide/migrations/0011_alter_guide_tagtype.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guide/migrations/0012_tagteam_guide_tagteam.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guide/templates/guide/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guide/templates/guide/pagination.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guide/templates/guide/sidebar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guide/templates/guide/topbar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/migrations/0002_alter_users_options_remove_users_registered_dttm_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/migrations/0003_users_registered_dttm_alter_users_username.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/migrations/0004_delete_users.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/templates/login/form_errors.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/templates/login/login_base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main_page/static/main_page/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main_page/static/main_page/js/example.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main_page/static/main_page/js/helpers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main_page/templates/main_page/calendarControls.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main_page/templates/main_page/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main_page/templates/main_page/mainpageTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main_page/templates/main_page/modalcontent.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main_page/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restart.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InternetProgramming6/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/InternetProgramming6/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InternetProgramming6/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/InternetProgramming6/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/guide/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/guide/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide/static/guide/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/guide/static/guide/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide/static/guide/css/pagination.css" beforeDir="false" afterPath="$PROJECT_DIR$/guide/static/guide/css/pagination.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide/static/guide/css/sb-admin-2.css" beforeDir="false" afterPath="$PROJECT_DIR$/guide/static/guide/css/sb-admin-2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide/templates/guide/guide.html" beforeDir="false" afterPath="$PROJECT_DIR$/guide/templates/guide/guide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/guide/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/guide/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/static/login/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/login/static/login/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/templates/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login/templates/login/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_page/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_page/views.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2Z18JrOWGCBA3DrsfSfr11qYSIk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="37a411bd-3d48-4376-ad05-24d46dcea698" name="Changes" comment="" />
+      <created>1701578160314</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1701578160314</updated>
+    </task>
+    <servers />
+  </component>
+</project>

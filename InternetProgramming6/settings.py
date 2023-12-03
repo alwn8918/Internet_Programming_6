@@ -40,9 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'guide',
     'login',
+    'main_page',
     'team',
     'crispy_forms',
     'crispy_bootstrap5',
+
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS='bootstrap5'
@@ -133,3 +135,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, '_media')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#AUTH_USER_MODEL = 'login.Users'
+
+# 로그인 성공 시 main으로 이동
+LOGIN_REDIRECT_URL = '/main_page/'
+
+# 로그아웃 시 main으로 이동
+LOGOUT_REDIRECT_URL = '/main_page/'
