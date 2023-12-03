@@ -1,0 +1,73 @@
+{% load static %}
+
+<!-- 사이드바 -->
+<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar"
+    style="background-color: rgb(95, 23, 52)">
+
+    <!-- 덕성 홈페이지 -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center"
+       href="https://www.duksung.ac.kr/main.do">
+        <div class="sidebar-brand-icon">
+            <img src="{% static 'guide/img/duksung_logo.png' %}" style="width: 90%;">
+        </div>
+        <div class="sidebar-brand-text">
+            <img src="{% static 'guide/img/duksung.png' %}" style="width: 90%;">
+        </div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- 메인 화면 -->
+    <li class="nav-item active">
+        <a class="nav-link" href="/main_page">
+            <i class="fas fa-fw fa-home"></i>
+            <span>메인 화면</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- 딜라이트 간단 안내 -->
+    <li class="nav-item active">
+        <a class="nav-link" href="/guide">
+            <i class="fas fa-fw fa-search"></i>
+            <span>딜라이트 안내</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- 팀원 모집 -->
+    <li class="nav-item active">
+        <a class="nav-link" href="/team">
+            <i class="fas fa-fw fa-comment"></i>
+            <span>팀원 모집</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- 팝업 버튼 -->
+    <button class="popup-btn" onclick="openPopup()">
+        <img src="{% static 'main_page/img/calendar_img.png' %}"
+             alt="popup button" width="50%">
+    </button>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup()">&#10006;</button>
+            <iframe src="calendar" width="100%" height="100%"></iframe>
+        </div>
+    </div>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+
+</ul>
+<!-- 사이드바 끝 -->

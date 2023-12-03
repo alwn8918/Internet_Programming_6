@@ -35,7 +35,8 @@ class TagTeam(models.Model):
 
 class Guide(models.Model):
     title = models.CharField(max_length=50, null=True)
-    period = models.CharField(max_length=50, null=True)
+    starttime = models.DateTimeField(null=True)
+    endtime = models.DateTimeField(null=True)
 
     category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.SET_NULL)
     tagtype = models.ManyToManyField(TagType, blank=True)

@@ -3,5 +3,6 @@ from . import views
 
 app_name = "main_page"
 urlpatterns = [
-    path('', views.index, name="main_page"),
+    path('', views.GuideList.as_view()),
+    path('calendar/', views.calendar),
 ]
