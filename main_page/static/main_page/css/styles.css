@@ -97,8 +97,7 @@
   /* 팝업 버튼 스타일 */
   .popup-btn {
     cursor: pointer;
-    margin-top: 20px;
-    background-color: #333;
+    background-color: transparent;
     color: #fff;
     border: none;
     padding: 10px;
