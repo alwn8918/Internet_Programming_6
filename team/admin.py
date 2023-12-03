@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MainCategory, SubCategory, Tag, TeamMatchingPost
+from .models import MainCategory, SubCategory, Tag, TeamMatchingPost, Comment
 from django import forms
 
 
@@ -33,3 +33,5 @@ class TeamMatchingPostAdmin(admin.ModelAdmin):
         return super().formfield_for_foreignkey(db_field, request, **kwargs)
 
 admin.site.register(TeamMatchingPost, TeamMatchingPostAdmin)
+
+admin.site.register(Comment)

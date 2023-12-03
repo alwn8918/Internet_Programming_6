@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-import os
+
 
 class MainCategory(models.Model):
     name = models.CharField(max_length=50, unique=True)
@@ -8,6 +8,12 @@ class MainCategory(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return f'/team/main_category/{self.slug}'
+
+    class Meta:
+        verbose_name_plural = 'Categories'
 
 class SubCategory(models.Model):
     name = models.CharField(max_length=50, unique=True)
@@ -18,12 +24,19 @@ class SubCategory(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return f'/team/sub_category/{self.slug}'
+
+    class Meta:
+        verbose_name_plural = 'Categories'
+
 class Tag(models.Model):
     name = models.CharField(max_length=50, unique=True)
     slug = models.SlugField(max_length=200, unique=True, allow_unicode=True)
 
     def __str__(self):
         return self.name
+
 
     def get_absolute_url(self):
         return f'/team_building/tag/{self.slug}'
@@ -42,11 +55,28 @@ class TeamMatchingPost(models.Model):
 
     tags = models.ManyToManyField(Tag, blank=True)
 
+    image = models.ImageField(upload_to='team_images/', null=True, blank=True)
+
     def __str__(self):
         return f'[{self.pk}]{self.title} :: {self.author}'
 
-    def get_absolute_url(self):
-        return f'/team_building/{self.pk}/'
+    def get_comment_count(self):
+        return self.comment_set.count()
 
+    def get_absolute_url(self):
+        return f'/team/{self.pk}/'
+
+class Comment(models.Model):
+    teammatchingpost = models.ForeignKey(TeamMatchingPost, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    modified_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f'{self.author}""{self.content}'
+
+    def get_absolute_url(self):
+        return f'{self.teammatchingpost.get_absolute_url()}#comment-{self.pk}'
 
 

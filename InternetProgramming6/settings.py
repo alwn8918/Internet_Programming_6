@@ -40,8 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'guide',
     'login',
+    'main_page',
     'team',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = ('bootstrap5', 'bootstrap4', 'uni_form')
+CRISPY_TEMPLATE_PACK='bootstrap5'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -72,6 +78,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'InternetProgramming6.wsgi.application'
+
 
 
 # Database

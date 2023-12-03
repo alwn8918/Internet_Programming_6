@@ -25,5 +25,4 @@ urlpatterns = [
     path('guide/', include('guide.urls')),
     path('login/', include('login.urls')),
     path('team/', include('team.urls')),
-
 ]
