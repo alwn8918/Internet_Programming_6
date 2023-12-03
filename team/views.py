@@ -6,6 +6,7 @@ from .forms import CommentForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404
 from django.core.exceptions import PermissionDenied
+import traceback  # Import the traceback module
 
 
 
@@ -48,6 +49,8 @@ def base_content(request):
         context
     )
 
+
+
 def detail_content(request, pk):
     context=get_common_data()
     context[pk]=pk
@@ -69,6 +72,32 @@ def base_detail_content(request):
     )
 
 
+def team_view(request):
+    try:
+        if request.method == 'POST':
+            print('Request Body:', request.body.decode('utf-8'))
+
+            data = json.loads(request.body.decode('utf-8'))
+            print('Received Data:', data)
+
+            selected_subcategories = data.get('sub_categories', [])
+
+            # Convert the IDs to integers
+            selected_subcategories = [int(sub_category_id) for sub_category_id in selected_subcategories]
+
+            # Filter TeamMatchingPost instances based on selected subcategories
+            matching_posts = TeamMatchingPost.objects.filter(sub_category__id__in=selected_subcategories)
+
+            # Serialize matching_posts to JSON
+            serialized_posts = [{'title': post.title, 'content': post.content} for post in matching_posts]
+
+            return JsonResponse({'matching_posts': serialized_posts})
+
+        return JsonResponse({'error': 'Invalid request method'})
+    except Exception as e:
+        # Log the exception for debugging
+        traceback.print_exc()
+        return JsonResponse({f"Error in team_view: {str(e)}"})
 
 
 class DetailContentView(DetailView):

@@ -3,15 +3,42 @@
 <html lang="ko">
 
 <script>
-    function test(slug) {
-        var checkbox = document.getElementById(slug + '_checkbox');
-        console.log('Before toggle - Checkbox checked:', checkbox.checked);
+    var csrf_token = "{{ csrf_token }}";
 
-        checkbox.checked = !checkbox.checked;
+    function applyCategoryFilter() {
+        var selectedSubcategories = [];
 
-        console.log('After toggle - Checkbox checked:', checkbox.checked);
+        // Get the current URL
+        var currentUrl = window.location.href;
+
+        // Log the URL to the console
+        console.log('Current URL:', currentUrl);
+
+        // Iterate over checkboxes and collect selected subcategories
+        var checkboxes = document.getElementsByClassName("sub-category-checkbox");
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                selectedSubcategories.push(checkboxes[i].value);
+            }
+        }
+        console.log('selectedSubcategories: ' + selectedSubcategories);
+
+        // Send selectedSubcategories to the server (Django views) using AJAX
+        fetch('filter/', {
+            method: 'POST',  // Use POST method
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrf_token, // Use the csrf_token variable
+            },
+            body: JSON.stringify({ sub_categories: selectedSubcategories }),  // Use 'sub_categories' key
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the response from the server, if needed
+                console.log(data);
+            })
+            .catch(error => console.error('Error:', error));
     }
-
 </script>
 
 
@@ -98,8 +125,8 @@
         <div id="collapse_{{ main_category.slug }}" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 {% for sub_category in main_category.subcategory_set.all %}
-                    <div class="collapse-item">
-                        <input class="filter-checkbox sub-category-checkbox main-category-{{ main_category.id }}" type="checkbox" value="{{ sub_category.slug }}" id="{{ main_category.slug }}_{{ sub_category.slug }}_checkbox" {% if sub_category.id in selectedCategories.sub %}checked{% endif %}>
+                    <div class="collapse-item" onclick="applyCategoryFilter()">
+                        <input class="sub-category-checkbox" type="checkbox" value="{{ sub_category.id }}" id="{{ sub_category.id }}_checkbox">
                         {{ sub_category.name }}
                     </div>
                 {% endfor %}
