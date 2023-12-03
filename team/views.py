@@ -20,7 +20,8 @@ def get_common_data():
     main_categories = MainCategory.objects.all()
     sub_categories = SubCategory.objects.all()
     tags = Tag.objects.all()
-    team_matching_posts = TeamMatchingPost.objects.all()
+    team_matching_posts = TeamMatchingPost.objects.all().order_by('-pk')
+
 
     return {
         'main_categories': main_categories,

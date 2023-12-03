@@ -45,6 +45,9 @@ class TeamMatchingPost(models.Model):
     def __str__(self):
         return f'[{self.pk}]{self.title} :: {self.author}'
 
+    def get_comment_count(self):
+        return self.comment_set.count()
+
     def get_absolute_url(self):
         return f'/team/{self.pk}/'
 

@@ -26,6 +26,11 @@
         padding: 25px
     }
 
+    .card-container {
+        width: 100%;
+    }
+
+
 </style>
 
 <!-- 게시물 -->
@@ -35,7 +40,8 @@
 <!-- 포스트 생성 -->
     {% if user.is_authenticated %}
     {% if user.is_superuser or user.is_staff %}
-        <div class="mb-5 d-flex justify-content-around">
+<!--        <div class="mb-5 d-flex justify-content-around new-post-button">-->
+        <div>
             <a href="/team/create_post/" class="btn btn-delight">NEW POST</a>
         </div>
     {% endif %}
@@ -92,7 +98,7 @@
                         </div>
 
                         <div class="card-footer text-muted">
-                            <a href="#">개발 예정(댓글 n개가 들어갈 자리)</a>
+                            <a href="#">댓글 {{post.get_comment_count}}개</a>
                         </div>
                     </div>
 

@@ -31,10 +31,10 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="{% static 'guide/css/sb-admin-2.css' %}" rel="stylesheet">
-    <link href="{% static 'guide/css/card.css' %}" rel="stylesheet">
-    <link href="{% static 'guide/css/pagination.css' %}" rel="stylesheet">
-    <link href="{% static 'guide/css/login.css' %}" rel="stylesheet">
+    <link href="{% static 'team/css/sb-admin-2.css' %}" rel="stylesheet">
+    <link href="{% static 'team/css/card.css' %}" rel="stylesheet">
+    <link href="{% static 'team/css/pagination.css' %}" rel="stylesheet">
+    <link href="{% static 'team/css/login.css' %}" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -62,7 +62,7 @@
 
             <!-- 메인 화면 -->
             <li class="nav-item active">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/main">
                     <i class="fas fa-fw fa-home"></i>
                     <span>메인 화면</span></a>
             </li>
@@ -72,7 +72,7 @@
 
             <!-- 딜라이트 간단 안내 -->
             <li class="nav-item active">
-                <a class="nav-link" href="guide.html">
+                <a class="nav-link" href="/guide">
                     <i class="fas fa-fw fa-search"></i>
                     <span>딜라이트 안내</span></a>
             </li>
@@ -82,7 +82,7 @@
 
             <!-- 팀원 모집 -->
             <li class="nav-item active">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/team">
                     <i class="fas fa-fw fa-comment"></i>
                     <span>팀원 모집</span></a>
             </li>
@@ -151,7 +151,7 @@
 
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="../login/"
+                            <a href="/login/"
                                     class="btn btn-login">로그인</a>
                         </li>
                     </ul>
