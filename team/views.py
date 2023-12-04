@@ -7,6 +7,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404
 from django.core.exceptions import PermissionDenied
 import traceback  # Import the traceback module
+from django.db.models import Q
 
 
 
@@ -172,6 +173,28 @@ class PostDelete(LoginRequiredMixin, DeleteView):
             raise PermissionDenied
 
 
+class TeamList(ListView):
+    model = TeamMatchingPost
+    template_name = 'team/base_content.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(TeamList, self).get_context_data()
+        return context
+
+class TeamSearch(TeamList):
+    def get_queryset(self):
+        q = self.kwargs['q']
+        team_list = TeamMatchingPost.objects.filter(
+            Q(title__contains=q)
+        ).distinct()
+        return team_list
+
+    def get_context_data(self, **kwargs):
+        context = super(TeamSearch, self).get_context_data()
+        q = self.kwargs['q']
+        context['search_info'] = f'Search: {q} ({self.get_queryset().count()})'
+
+        return context
 
 
 # class TeamMatchingView(View):
