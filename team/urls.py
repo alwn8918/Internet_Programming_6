@@ -5,7 +5,7 @@ from . import views
 urlpatterns = [
     path('', views.content),
     path('', views.base_content),
-    path('filter/', views.team_view),
+    path('filter/', views.filtered_content),
 
     path('<int:pk>/', views.DetailContentView.as_view()),
     path('<int:pk>/', views.base_detail_content),
