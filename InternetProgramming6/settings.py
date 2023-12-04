@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'login',
     'main_page',
     'team',
+    'crispy_forms',
     'crispy_bootstrap5',
 
 ]
