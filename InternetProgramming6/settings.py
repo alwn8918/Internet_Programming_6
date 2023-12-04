@@ -144,3 +144,7 @@ LOGIN_REDIRECT_URL = '/main_page/'
 LOGOUT_REDIRECT_URL = '/main_page/'
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+#배포(static 모으기)
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
