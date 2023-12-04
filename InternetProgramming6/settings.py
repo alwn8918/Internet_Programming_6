@@ -148,3 +148,6 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 #배포(static 모으기)
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+#배포(호스트)
+ALLOWED_HOSTS = ['dsdelighter.pythonanywhere.com']
