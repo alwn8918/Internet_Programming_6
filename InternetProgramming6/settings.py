@@ -146,8 +146,14 @@ LOGOUT_REDIRECT_URL = '/main_page/'
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 #배포(static 모으기)
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'guide', 'static'),
+    os.path.join(BASE_DIR, 'login', 'static'),
+    os.path.join(BASE_DIR, 'main_page', 'static'),
+    os.path.join(BASE_DIR, 'team', 'static'),
+]
+
 
 #배포(호스트)
 ALLOWED_HOSTS = ['dsdelighter.pythonanywhere.com']
