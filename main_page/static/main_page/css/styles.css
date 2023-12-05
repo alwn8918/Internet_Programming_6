@@ -104,14 +104,13 @@
   
   /* 팝업 버튼 스타일 */
   .popup-btn {
-    position: fixed;
-    bottom: 20px;
     cursor: pointer;
     background-color: transparent;
     color: #fff;
     border: none;
     padding: 10px;
     outline: none;
+    margin-top: 200%;
   }
 
 footer {
