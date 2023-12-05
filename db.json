@@ -1,0 +1,66 @@
+[
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$720000$0yt3nSaO7HRbASxvkMCxcg$ESDl2KUBeFrlRghboDeXK0MRZbf++J7EdzeKmN4ZSjc=",
+        "last_login": "2023-12-05T03:34:03.726Z",
+        "is_superuser": true,
+        "username": "miju",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2023-12-05T03:28:42.053Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "guide.category",
+    "pk": 1,
+    "fields": {
+        "name": "장학금O",
+        "slug": "장학금o"
+    }
+},
+{
+    "model": "guide.category",
+    "pk": 2,
+    "fields": {
+        "name": "장학금X",
+        "slug": "장학금x"
+    }
+},
+{
+    "model": "guide.guide",
+    "pk": 1,
+    "fields": {
+        "title": "테스트",
+        "starttime": "2023-12-05T03:34:23Z",
+        "endtime": "2023-12-05T03:34:25Z",
+        "category": null,
+        "image": "https://delight.duksung.ac.kr/attachment/view/25862/cover.jpg?ts=1701420918",
+        "delight_link": "https://delight.duksung.ac.kr/ko/program/all/view/1190",
+        "tagtype": [],
+        "tagteam": []
+    }
+},
+{
+    "model": "team.teammatchingpost",
+    "pk": 1,
+    "fields": {
+        "title": "테스트",
+        "hook_text": "테스트",
+        "content": "테스트테스트테스트",
+        "created_at": "2023-12-05T03:34:49.671Z",
+        "updated_at": "2023-12-05T03:34:49.671Z",
+        "author": [
+            "miju"
+        ],
+        "main_category": null,
+        "sub_category": null,
+        "tags": []
+    }
+}
+]
