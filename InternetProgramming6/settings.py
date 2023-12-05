@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-@tdv%*en^tll&0aph4b*l7jd27&(ljy-ya@5ho5b1m6m=k05hq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -140,19 +140,19 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # 로그인 성공 시 main으로 이동
 LOGIN_REDIRECT_URL = '/main_page/'
 
-# 로그아웃 시 main으로 이동
+# 로그아웃 시 main으로 이동(후 기존 페이지로)
 LOGOUT_REDIRECT_URL = '/main_page/'
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 #배포(static 모으기)
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'guide', 'static'),
-    os.path.join(BASE_DIR, 'login', 'static'),
-    os.path.join(BASE_DIR, 'main_page', 'static'),
-    os.path.join(BASE_DIR, 'team', 'static'),
-]
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, 'guide', 'static'),
+#    os.path.join(BASE_DIR, 'login', 'static'),
+#    os.path.join(BASE_DIR, 'main_page', 'static'),
+#    os.path.join(BASE_DIR, 'team', 'static'),
+#]
 
 
 #배포(호스트)
