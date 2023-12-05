@@ -27,8 +27,7 @@
 
     <!-- Custom fonts for this template-->
     <link href="{% static 'guide/vendor/fontawesome-free/css/all.css' %}" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="{% static 'team/css/sb-admin-2.css' %}" rel="stylesheet">
@@ -108,9 +107,6 @@
     </li>
 {% endfor %}
 
-<!--onclick="handleTagClick('{{ main_category.slug }}', event)"-->
-
-
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -127,21 +123,17 @@
 
             <!-- Main Content -->
             <div id="content">
-                
 
             {% include 'team/topbar.html' %}
 
                 {% block detail_content %}
                 {% endblock %}
 
-
-
             </div>
             <!-- End of Main Content -->
 
-            <!-- 페이지네이션 -->
+            <div>test pagination</div>
         {% include 'team/pagination.html' %}
-            <!-- Footer -->
         {% include 'team/footer.html' %}
 
         </div>

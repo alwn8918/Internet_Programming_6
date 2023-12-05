@@ -1,39 +1,9 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-
-<!-- 페이지네이션 -->
-<div class="pagination">
-    <!-- 동적 생성-->
-</div>
-<!-- 페이지네이션 끝 -->
-
 <!-- 페이지네이션 jQuery 구현-->
+
 <script type="text/javascript">
-    function getPageList(totalPages, page, maxLength) {
-        function range(start, end) {
-            return Array.from(Array(end - start + 1), (_, i) => i + start);
-        }
 
-        var sideWidth = maxLength < 9 ? 1 : 2;
-        var leftWidth = (maxLength - sideWidth * 2 - 3) >> 1;
-        var rightWidth = (maxLength - sideWidth * 2 - 3) >> 1;
-
-        if (totalPages <= maxLength) {
-            return range(1, totalPages);
-        }
-
-        if (page <= maxLength - sideWidth - 1 - rightWidth) {
-            return range(1, maxLength - sideWidth - 1).concat(0, range(totalPages - sideWidth + 1, totalPages));
-        }
-
-        if (page >= totalPages - sideWidth - 1 - rightWidth) {
-            return range(1, sideWidth).concat(0, range(totalPages - sideWidth - 1 - rightWidth - leftWidth, totalPages));
-        }
-
-        return range(1, sideWidth).concat(0, range(page - leftWidth, page + rightWidth), 0, range(totalPages - sideWidth + 1, totalPages));
-    }
-
-    $(function() {
+    function updatePagination() {
         var numberOfItems = $(".card-container .card").length;
         var limitPerPage = 6;
         var totalPages = Math.ceil(numberOfItems / limitPerPage);
@@ -41,6 +11,8 @@
         var currentPage;
 
         console.log('numberOfItems:'+numberOfItems);
+        console.log('totalPages:'+totalPages);
+
 
         //console.log('totalPages: '+totalPages);
 
@@ -49,7 +21,7 @@
 
             currentPage = whichPage;
 
-            $(".card-container .card").hide().slice((currentPage - 1) * limitPerPage, currentPage * limitPerPage).show();
+            $(".card-container .col").hide().slice((currentPage - 1) * limitPerPage, currentPage * limitPerPage).css('margin', 0).show();
             // card가 15개일 경우 전체 currentPage==3, slice(2*6, 3*6).show()
 
             $(".pagination li").slice(1, -1).remove();
@@ -84,5 +56,45 @@
         $(".previous-page").on("click", function() {
             return showPage(currentPage - 1);
         });
+    }
+
+        function getPageList(totalPages, page, maxLength) {
+        function range(start, end) {
+            return Array.from(Array(end - start + 1), (_, i) => i + start);
+        }
+
+        var sideWidth = maxLength < 9 ? 1 : 2;
+        var leftWidth = (maxLength - sideWidth * 2 - 3) >> 1;
+        var rightWidth = (maxLength - sideWidth * 2 - 3) >> 1;
+
+        if (totalPages <= maxLength) {
+            return range(1, totalPages);
+        }
+
+        if (page <= maxLength - sideWidth - 1 - rightWidth) {
+            return range(1, maxLength - sideWidth - 1).concat(0, range(totalPages - sideWidth + 1, totalPages));
+        }
+
+        if (page >= totalPages - sideWidth - 1 - rightWidth) {
+            return range(1, sideWidth).concat(0, range(totalPages - sideWidth - 1 - rightWidth - leftWidth, totalPages));
+        }
+
+        return range(1, sideWidth).concat(0, range(page - leftWidth, page + rightWidth), 0, range(totalPages - sideWidth + 1, totalPages));
+    }
+
+    $(document).ready(function() {
+        // Initialize pagination on document ready
+        updatePagination();
+
+        // Listen for the custom event to update pagination
+        document.addEventListener('updatePagination', function() {
+            updatePagination();
+        });
     });
 </script>
+
+<div class="pagination">
+    <!-- 동적 생성-->
+</div>
+
+

@@ -1,0 +1,165 @@
+<style>
+<!--    .filter-container {-->
+<!--        position: absolute;-->
+<!--        top: 0; /* Adjust as needed */-->
+<!--        right: 0;-->
+<!--    }-->
+
+    @media (max-width: 768px) {
+        .row {
+            flex-direction: column-reverse;
+        }
+
+<!--        .row-cols-md-3 > * {-->
+<!--            max-width: 20%-->
+<!--        }-->
+    }
+
+    .card-container {
+    }
+
+    .card-footer {
+        padding: 25px
+    }
+
+    .card-container {
+        width: 100%;
+    }
+
+    .col {
+        max-width: 600px;
+    }
+
+
+</style>
+
+
+<div class="container">
+    <div class="column">
+
+        {% if user.is_authenticated %}
+            {% if user.is_superuser or user.is_staff %}
+                <div>
+                    <a href="/team/create_post/" class="btn btn-delight">NEW POST</a>
+                </div>
+            {% endif %}
+        {% endif %}
+
+           {% if matching_posts %}
+                <!-- Display team_matching_posts if matching_posts is empty -->
+                <div class="main-content-container col-md-9">
+                    <div class="card-container row row-cols-1 row-cols-md-3 g-4">
+                        <!-- Display each post in team_matching_posts -->
+                        {% for post in matching_posts %}
+                            <div class="col mb-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        {% if post.main_category %}
+                                        <span class="badge bg-secondary">
+                                            <a href="{{ post.get_absolute_url }}" class="">
+                                                {{ post.main_category }}
+                                            </a>
+                                            >
+                                            <a href="{{ post.get_absolute_url }}" class="">
+                                                {{ post.sub_category }}
+                                            </a>
+                                        </span>
+                                        {% else %}
+                                        <span class="badge bg-secondary">미분류</span>
+                                        {% endif %}
+
+                                        <!-- admin에서 설정하는 제목 -->
+                                        <h5 class="card-title">{{ post.title }}</h5>
+                                        <p class="card-text">
+                                            {{ post.author }}<br/>{{ post.created_at }}<hr/>
+                                        </p>
+                                        <p class="card-text">
+                                            {{ post.content | truncatechars:15 }}
+                                        </p>
+
+                                        {% if post.tags.exists %}
+                                        <i class="fa tags fa-tags"></i>
+                                            {% for tag in post.tags.iterator %}
+                                                <a href="{{ tag.get_absolute_url }}">
+                                                    <span class="badge bg-secondary">{{ tag }}</span>
+                                                </a>
+                                            {% endfor %}
+                                        <br/><br/>
+                                        {% endif %}
+                                    </div>
+
+                                    <div class="mb-5 d-flex justify-content-around">
+                                        <a href="{{ post.get_absolute_url }}" class="btn btn-delight">Read More &rarr;</a>
+                                    </div>
+
+                                    <div class="card-footer text-muted">
+                                        <a href="#">댓글 {{post.get_comment_count}}개</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% elif team_matching_posts %}
+                <!-- Display team_matching_posts if matching_posts is empty -->
+                <div class="main-content-container col-md-9">
+                    <div class="card-container row row-cols-1 row-cols-md-3 g-4">
+                        <!-- Display each post in team_matching_posts -->
+                        {% for post in team_matching_posts %}
+                            <div class="col mb-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        {% if post.main_category %}
+                                        <span class="badge bg-secondary">
+                                            <a href="{{ post.get_absolute_url }}" class="">
+                                                {{ post.main_category }}
+                                            </a>
+                                            >
+                                            <a href="{{ post.get_absolute_url }}" class="">
+                                                {{ post.sub_category }}
+                                            </a>
+                                        </span>
+                                        {% else %}
+                                        <span class="badge bg-secondary">미분류</span>
+                                        {% endif %}
+
+                                        <!-- admin에서 설정하는 제목 -->
+                                        <h5 class="card-title">{{ post.title }}</h5>
+                                        <p class="card-text">
+                                            {{ post.author }}<br/>{{ post.created_at }}<hr/>
+                                        </p>
+                                        <p class="card-text">
+                                            {{ post.content | truncatechars:15 }}
+                                        </p>
+
+                                        {% if post.tags.exists %}
+                                        <i class="fa tags fa-tags"></i>
+                                            {% for tag in post.tags.iterator %}
+                                                <a href="{{ tag.get_absolute_url }}">
+                                                    <span class="badge bg-secondary">{{ tag }}</span>
+                                                </a>
+                                            {% endfor %}
+                                        <br/><br/>
+                                        {% endif %}
+                                    </div>
+
+                                    <div class="mb-5 d-flex justify-content-around">
+                                        <a href="{{ post.get_absolute_url }}" class="btn btn-delight">Read More &rarr;</a>
+                                    </div>
+
+                                    <div class="card-footer text-muted">
+                                        <a href="#">댓글 {{post.get_comment_count}}개</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% else %}
+                <!-- Display some default content or a message when there are no matching or team_matching posts -->
+                <div class="main-content-container col-md-12">
+                    <p>포스트가 없습니다</p>
+                </div>
+            {% endif %}
+    </div>
+</div>

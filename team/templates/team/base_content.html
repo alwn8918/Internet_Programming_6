@@ -4,41 +4,42 @@
 
 <script>
     var csrf_token = "{{ csrf_token }}";
+    var matching_posts;
 
-    function applyCategoryFilter() {
-        var selectedSubcategories = [];
+function applyCategoryFilter() {
+    var selectedSubcategories = [];
 
-        // Get the current URL
-        var currentUrl = window.location.href;
-
-        // Log the URL to the console
-        console.log('Current URL:', currentUrl);
-
-        // Iterate over checkboxes and collect selected subcategories
-        var checkboxes = document.getElementsByClassName("sub-category-checkbox");
-        for (var i = 0; i < checkboxes.length; i++) {
-            if (checkboxes[i].checked) {
-                selectedSubcategories.push(checkboxes[i].value);
-            }
+    // Iterate over checkboxes and collect selected subcategories
+    var checkboxes = document.getElementsByClassName("sub-category-checkbox");
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+            selectedSubcategories.push(checkboxes[i].value);
         }
-        console.log('selectedSubcategories: ' + selectedSubcategories);
-
-        // Send selectedSubcategories to the server (Django views) using AJAX
-        fetch('filter/', {
-            method: 'POST',  // Use POST method
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': csrf_token, // Use the csrf_token variable
-            },
-            body: JSON.stringify({ sub_categories: selectedSubcategories }),  // Use 'sub_categories' key
-        })
-            .then(response => response.json())
-            .then(data => {
-                // Handle the response from the server, if needed
-                console.log(data);
-            })
-            .catch(error => console.error('Error:', error));
     }
+
+    // Send selectedSubcategories to the server (Django views) using AJAX
+    fetch('filter/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrf_token,
+        },
+        body: JSON.stringify({ sub_categories: selectedSubcategories }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Update the content on the frontend using the received HTML content
+        document.getElementById("content-root").innerHTML = data.html_content;
+
+        // Dispatch a custom event to notify pagination to update
+        var event = new Event('updatePagination');
+        document.dispatchEvent(event);
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+
+
 </script>
 
 
@@ -157,8 +158,11 @@
 
             {% include 'team/topbar.html' %}
 
+
+                <div id="content-root">
                 {% block content %}
                 {% endblock %}
+                </div>
 
 
 

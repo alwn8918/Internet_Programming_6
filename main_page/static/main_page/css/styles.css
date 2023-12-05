@@ -1,3 +1,11 @@
+#logoImage {
+  width: 300px; 
+  height: auto; /* 가로폭을 유지한 채 비율에 맞게 높이 조절 */
+  display: block; /* 인라인 요소로 설정하여 여백 및 정렬을 적용*/
+  margin-bottom: 20px; /* 이미지 아래 여백 설정 */
+  margin: 0 auto; 
+}
+
 #slideshow-container {
     width: 800px;
     height: 512px;
@@ -104,3 +112,21 @@
     padding: 10px;
     outline: none;
   }
+
+footer {
+  background-color:darkgray; /* 푸터 배경색 추가 */
+  padding: 10px; /* 푸터 내부 여백 추가 */
+}
+
+#footerDivider {
+  margin-top: 0px; /* 구분선 위 여백 설정 */
+  border-top: 1px solid #ddd; /* 1픽셀 높이의 회색 구분선 */
+}
+
+#footerText {
+  margin-top: 10px;
+  justify-content: space-around;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
