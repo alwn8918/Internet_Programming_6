@@ -4,6 +4,8 @@
 <script type="text/javascript">
 
     function updatePagination() {
+        $(".pagination").empty();
+
         var numberOfItems = $(".card-container .card").length;
         var limitPerPage = 6;
         var totalPages = Math.ceil(numberOfItems / limitPerPage);

@@ -52,17 +52,18 @@ body {
                 <!-- Post header-->
                 <header class="mb-4">
                     {% if teammatchingpost.main_category %}
-                        <a href="{{ teammatchingpost.get_absolute_url }}" class="">
+                        <a href="{{ teammatchingpost.main_category.get_absolute_url }}" class="">
                             {{ teammatchingpost.main_category }}
                         </a>
                         >
-                        <a href="{{ teammatchingpost.get_absolute_url }}" class="">
+                        <a href="{{ teammatchingpost.sub_category.get_absolute_url }}" class="">
                             {{ teammatchingpost.sub_category }}
                         </a>
                     </span>
                     {% else %}
                     <span class="badge bg-secondary">미분류</span>
                     {% endif %}
+
                     <!-- Post title-->
                     <h1 class="fw-bolder mb-1">{{ teammatchingpost.title }}</h1>
                     <!-- Post meta content-->
@@ -89,53 +90,53 @@ body {
             </article>
 
 
-            <!-- Comments section-->
+<!--            Comments section -->
             <section class="mb-5">
-                        <div class="card bg-light">
-                            <div class="card-body">
-                                <!-- Comment form-->
-                                {% if user.is_authenticated %}
-                                <form class="mb-4" id="comment-form" method="POST" action="{{teammatchingpost.get_absolute_url}}new_comment/">
-                                    <div class="column">
-                                    {% csrf_token %}
-                                    <div class="form-group">
-                                        {{ comment_form | crispy }}
-                                    </div>
-                                    <button type="submit" class="btn btn-primary float-end">Submit</button>
-                                    {% else %}
-                                    <a role="button" class="btn btn-sm" href="#" data-toggle="modal" data-taget="#loginModal">
-                                        로그인하고 댓글을 남겨주세요.
-                                    </a>
-                                    {% endif %}
-                                    </div>
-                                </form>
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <!-- Comment form-->
+                        {% if user.is_authenticated %}
+                        <form class="mb-4" id="comment-form" method="POST" action="{{post.get_absolute_url}}new_comment/">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                {{ comment_form | crispy }}
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        {% else %}
+                        <a role="button" class="btn btn-sm" href="#" data-toggle="modal" data-target="#loginModal">
+                            로그인하고 댓글을 남겨주세요.
+                        </a>
+                        {% endif %}
+                        </form>
 
-                                <!-- Single comment-->
-                                {% if teammatchingpost.comment_set.exists %}
-                                {% for comment in teammatchingpost.comment_set.iterator %}
+                        <!-- Single comment-->
+                        {% if teammatchingpost.comment_set.exists %}
+                        {% for comment in teammatchingpost.comment_set.iterator %}
 
-                                <div class="d-flex" id="comment-{{comment.pk}}">
-                                    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                    <div class="ms-3 comment-content">
-                                        <div class="fw-bold">
-                                            {{comment.author}}
-                                        </div>
-                                        <p class="text-muted fst-italic mb-2">{{comment.created_at}}</p>
-
-                                        {{ comment.content | linebreaks }}
-                                        {% if comment.created_at != comment.modified_at %}
-                                        <p class="text-muted">
-                                            <small>Updated : {{ comment.modified_at }}</small>
-                                        </p>
-                                        {% endif %}
-                                    </div>
+                        <div class="d-flex" id="comment-{{comment.pk}}">
+                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                            <div class="ms-3 comment-content">
+                                <div class="fw-bold">
+                                    {{comment.author}}
                                 </div>
-                                <hr>
-                                {% endfor %}
+                                <p class="text-muted fst-italic mb-2">{{comment.created_at}}</p>
+
+                                {{ comment.content | linebreaks }}
+                                {% if comment.created_at != comment.modified_at %}
+                                <p class="text-muted">
+                                    <small>Updated : {{ comment.modified_at }}</small>
+                                </p>
                                 {% endif %}
                             </div>
                         </div>
-                    </section>
+                        <hr>
+                        {% endfor %}
+                        {% endif %}
+
+
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 </div>

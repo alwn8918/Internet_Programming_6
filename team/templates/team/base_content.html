@@ -126,8 +126,8 @@ function applyCategoryFilter() {
         <div id="collapse_{{ main_category.slug }}" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 {% for sub_category in main_category.subcategory_set.all %}
-                    <div class="collapse-item" onclick="applyCategoryFilter()">
-                        <input class="sub-category-checkbox" type="checkbox" value="{{ sub_category.id }}" id="{{ sub_category.id }}_checkbox">
+                    <div class="collapse-item">
+                        <input class="sub-category-checkbox" type="checkbox" value="{{ sub_category.id }}" id="{{ sub_category.id }}_checkbox" onclick="applyCategoryFilter()">
                         {{ sub_category.name }}
                     </div>
                 {% endfor %}
@@ -163,8 +163,6 @@ function applyCategoryFilter() {
                 {% block content %}
                 {% endblock %}
                 </div>
-
-
 
             </div>
             <!-- End of Main Content -->

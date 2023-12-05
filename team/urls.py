@@ -7,6 +7,9 @@ urlpatterns = [
     path('', views.base_content),
     path('filter/', views.filtered_content),
 
+    path('category/<str:slug>/', views.get_main_category_posts),
+    path('category/<str:slug_main>/<str:slug_sub>', views.get_sub_category_posts),
+
     path('<int:pk>/', views.DetailContentView.as_view()),
     path('<int:pk>/', views.base_detail_content),
     path('<int:pk>/new_comment/', views.new_comment),
