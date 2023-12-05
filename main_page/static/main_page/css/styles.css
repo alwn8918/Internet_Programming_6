@@ -105,7 +105,6 @@
   /* 팝업 버튼 스타일 */
   .popup-btn {
     cursor: pointer;
-    margin: 70%;
     background-color: transparent;
     color: #fff;
     border: none;
