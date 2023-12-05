@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-@tdv%*en^tll&0aph4b*l7jd27&(ljy-ya@5ho5b1m6m=k05hq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'main_page',
     'team',
     'crispy_bootstrap5',
+    'crispy_forms'
 
 ]
 
@@ -156,4 +157,4 @@ STATICFILES_DIRS = [
 
 
 #배포(호스트)
-ALLOWED_HOSTS = ['dsdelighter.pythonanywhere.com']
+#ALLOWED_HOSTS = ['dsdelighter.pythonanywhere.com']

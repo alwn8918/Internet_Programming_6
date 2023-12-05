@@ -26,8 +26,7 @@
             {{ user.last_name }}{{ user.first_name }} 님  
             <a class="btn btn-login" href="{% url 'login:logout' %}?next={{ request.path }}">로그아웃</a>
             {% else %}
-            <a href="{% url 'login:login' %}"
-            class="btn btn-login">로그인</a>
+            <a class="btn btn-login" href="/login/login/">로그인</a>
             {% endif %}
         </li>
     </ul>
