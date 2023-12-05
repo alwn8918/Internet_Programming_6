@@ -3,7 +3,7 @@
     "model": "auth.user",
     "fields": {
         "password": "pbkdf2_sha256$720000$0yt3nSaO7HRbASxvkMCxcg$ESDl2KUBeFrlRghboDeXK0MRZbf++J7EdzeKmN4ZSjc=",
-        "last_login": "2023-12-05T03:34:03.726Z",
+        "last_login": "2023-12-05T21:06:00.113Z",
         "is_superuser": true,
         "username": "miju",
         "first_name": "",
@@ -20,39 +20,531 @@
     "model": "guide.category",
     "pk": 1,
     "fields": {
-        "name": "ìž¥í•™ê¸ˆO",
-        "slug": "ìž¥í•™ê¸ˆo"
+        "name": "ÀåÇÐ±ÝO",
+        "slug": "ÀåÇÐ±Ýo"
     }
 },
 {
     "model": "guide.category",
     "pk": 2,
     "fields": {
-        "name": "ìž¥í•™ê¸ˆX",
-        "slug": "ìž¥í•™ê¸ˆx"
+        "name": "ÀåÇÐ±ÝX",
+        "slug": "ÀåÇÐ±Ýx"
+    }
+},
+{
+    "model": "guide.tagtype",
+    "pk": 1,
+    "fields": {
+        "name": "´ë¸é",
+        "slug": "´ë¸é"
+    }
+},
+{
+    "model": "guide.tagtype",
+    "pk": 2,
+    "fields": {
+        "name": "ºñ´ë¸é",
+        "slug": "ºñ´ë¸é"
+    }
+},
+{
+    "model": "guide.tagtype",
+    "pk": 3,
+    "fields": {
+        "name": "e-·¯´×",
+        "slug": "e-·¯´×"
+    }
+},
+{
+    "model": "guide.tagtype",
+    "pk": 4,
+    "fields": {
+        "name": "±³³»´ëÈ¸",
+        "slug": "±³³»´ëÈ¸"
+    }
+},
+{
+    "model": "guide.tagtype",
+    "pk": 5,
+    "fields": {
+        "name": "±³¿ÜÈ°µ¿",
+        "slug": "±³¿ÜÈ°µ¿"
+    }
+},
+{
+    "model": "guide.tagtype",
+    "pk": 6,
+    "fields": {
+        "name": "»ó´ã",
+        "slug": "»ó´ã"
+    }
+},
+{
+    "model": "guide.tagtype",
+    "pk": 7,
+    "fields": {
+        "name": "ÀÚ°ÝÁõ",
+        "slug": "ÀÚ°ÝÁõ"
+    }
+},
+{
+    "model": "guide.tagtype",
+    "pk": 8,
+    "fields": {
+        "name": "±âÅ¸",
+        "slug": "±âÅ¸"
+    }
+},
+{
+    "model": "guide.tagteam",
+    "pk": 1,
+    "fields": {
+        "name": "ÆÀ",
+        "slug": "ÆÀ"
+    }
+},
+{
+    "model": "guide.tagteam",
+    "pk": 2,
+    "fields": {
+        "name": "°³ÀÎ",
+        "slug": "°³ÀÎ"
     }
 },
 {
     "model": "guide.guide",
     "pk": 1,
     "fields": {
-        "title": "í…ŒìŠ¤íŠ¸",
-        "starttime": "2023-12-05T03:34:23Z",
-        "endtime": "2023-12-05T03:34:25Z",
+        "title": "2023ÇÐ³âµµ ÀÏ´ëÀÏ ±Û¾²±â »ó´ã ÇÁ·Î±×·¥",
+        "starttime": "2023-11-27T00:00:00Z",
+        "endtime": "2023-12-10T00:00:00Z",
+        "category": 2,
+        "image": "https://delight.duksung.ac.kr/attachment/view/20071/cover.jpg?ts=1700787089",
+        "delight_link": "https://delight.duksung.ac.kr/ko/program/all/view/882",
+        "tagtype": [
+            2,
+            6
+        ],
+        "tagteam": [
+            2
+        ]
+    }
+},
+{
+    "model": "guide.guide",
+    "pk": 2,
+    "fields": {
+        "title": "»çÀÌ¹öº¸¾ÈÀü°ø Á¦1È¸ Á¹¾÷ÀÛÇ°Àü½ÃÈ¸ Àü½Ãµµ¿ì¹Ì",
+        "starttime": "2023-11-27T00:00:00Z",
+        "endtime": "2023-12-12T17:00:00Z",
+        "category": 2,
+        "image": "https://delight.duksung.ac.kr/attachment/view/26034/cover.jpg?ts=1701743048",
+        "delight_link": "https://delight.duksung.ac.kr/ko/program/all/view/1193",
+        "tagtype": [
+            8
+        ],
+        "tagteam": [
+            2
+        ]
+    }
+},
+{
+    "model": "guide.guide",
+    "pk": 3,
+    "fields": {
+        "title": "2023-µ¿°è DS ¿µ¾îÁýÁßÇÁ·Î±×·¥",
+        "starttime": "2023-12-05T01:00:00Z",
+        "endtime": "2023-12-17T14:45:00Z",
         "category": null,
-        "image": "https://delight.duksung.ac.kr/attachment/view/25862/cover.jpg?ts=1701420918",
-        "delight_link": "https://delight.duksung.ac.kr/ko/program/all/view/1190",
-        "tagtype": [],
-        "tagteam": []
+        "image": "https://delight.duksung.ac.kr/attachment/view/26248/cover.jpg?ts=1701674487",
+        "delight_link": "https://delight.duksung.ac.kr/ko/program/all/view/1212",
+        "tagtype": [
+            2
+        ],
+        "tagteam": [
+            2
+        ]
+    }
+},
+{
+    "model": "guide.guide",
+    "pk": 4,
+    "fields": {
+        "title": "2023ÇÐ³âµµ ÄÄÇ»ÆÃ»ç°í À¶ÇÕ°æÁø´ëÈ¸",
+        "starttime": "2023-11-30T15:00:00Z",
+        "endtime": "2023-12-18T14:45:00Z",
+        "category": 1,
+        "image": "https://delight.duksung.ac.kr/attachment/view/25821/cover.jpg?ts=1701327988",
+        "delight_link": "https://delight.duksung.ac.kr/attachment/view/25821/cover.jpg?ts=1701327988",
+        "tagtype": [
+            4
+        ],
+        "tagteam": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "guide.guide",
+    "pk": 5,
+    "fields": {
+        "title": "2023-2 µµºÀ¹®È­¿ø-´ö¼º¿©´ë ¿¬ÇÕ ÇÐ¼ú´ëÈ¸ '¼¼´ë¸¦ Èå¸£´Â Áö¿ª¹®È­'",
+        "starttime": "2023-12-04T00:00:00Z",
+        "endtime": "2023-12-19T06:00:00Z",
+        "category": 2,
+        "image": "https://delight.duksung.ac.kr/attachment/view/26222/cover.jpg?ts=1701651815",
+        "delight_link": "https://delight.duksung.ac.kr/ko/program/all/view/1208",
+        "tagtype": [
+            1,
+            8
+        ],
+        "tagteam": [
+            2
+        ]
+    }
+},
+{
+    "model": "guide.guide",
+    "pk": 6,
+    "fields": {
+        "title": "2023ÇÐ³âµµ Ä¸½ºÅæµðÀÚÀÎ °æ¿¬´ëÈ¸ Âü°¡",
+        "starttime": "2023-11-26T15:00:00Z",
+        "endtime": "2023-12-22T14:45:00Z",
+        "category": 2,
+        "image": "https://delight.duksung.ac.kr/attachment/view/26030/cover.jpg?ts=1701132885",
+        "delight_link": "https://delight.duksung.ac.kr/ko/program/all/view/1207",
+        "tagtype": [
+            4
+        ],
+        "tagteam": [
+            1
+        ]
+    }
+},
+{
+    "model": "guide.guide",
+    "pk": 7,
+    "fields": {
+        "title": "2023ÇÐ³âµµ 2ÇÐ±â Áø·Î±æ¶óJOBÀÌ(Ä³Ä¡¾÷ÇÁ·Î±×·¥)",
+        "starttime": "2023-09-01T00:00:00Z",
+        "endtime": "2023-12-29T00:00:00Z",
+        "category": 2,
+        "image": "https://delight.duksung.ac.kr/attachment/view/23342/cover.jpg?ts=1698282128",
+        "delight_link": "https://delight.duksung.ac.kr/ko/program/all/view/1090",
+        "tagtype": [
+            1,
+            6
+        ],
+        "tagteam": [
+            2
+        ]
+    }
+},
+{
+    "model": "guide.guide",
+    "pk": 8,
+    "fields": {
+        "title": "2023³â ÀçÇÐ»ý ½º¸¶Æ®Æù °úÀÇÁ¸ ¿¹¹æ±³À°",
+        "starttime": "2023-03-05T15:00:00Z",
+        "endtime": "2023-12-30T15:00:00Z",
+        "category": 2,
+        "image": "https://delight.duksung.ac.kr/attachment/view/20097/cover.jpg?ts=1698733956",
+        "delight_link": "https://delight.duksung.ac.kr/ko/program/all/view/892",
+        "tagtype": [
+            3
+        ],
+        "tagteam": [
+            2
+        ]
+    }
+},
+{
+    "model": "guide.guide",
+    "pk": 9,
+    "fields": {
+        "title": "2023³â 2ÇÐ±â ½É¸®»ó´ã",
+        "starttime": "2023-09-01T00:00:00Z",
+        "endtime": "2023-12-31T14:45:00Z",
+        "category": 2,
+        "image": "https://delight.duksung.ac.kr/attachment/view/23379/cover.jpg?ts=1698300512",
+        "delight_link": "https://delight.duksung.ac.kr/ko/program/all/view/1098",
+        "tagtype": [
+            6
+        ],
+        "tagteam": [
+            2
+        ]
+    }
+},
+{
+    "model": "guide.guide",
+    "pk": 10,
+    "fields": {
+        "title": "2023ÇÐ³âµµ µ¿°è ±Û·Î¹úÃ§¸°Àú",
+        "starttime": "2023-10-16T00:00:00Z",
+        "endtime": "2023-10-20T14:59:00Z",
+        "category": 1,
+        "image": "https://delight.duksung.ac.kr/attachment/view/24198/cover.jpg?ts=1698713128",
+        "delight_link": "https://delight.duksung.ac.kr/ko/program/all/view/1129",
+        "tagtype": [
+            5
+        ],
+        "tagteam": [
+            1
+        ]
+    }
+},
+{
+    "model": "guide.guide",
+    "pk": 11,
+    "fields": {
+        "title": "Á¦56È¸ µ¶¼­Ä«Æä 'Ã¥°ú ÇÔ²²ÇÏ´Â »ó»ó¿©Çà'",
+        "starttime": "2023-11-13T15:00:00Z",
+        "endtime": "2023-11-30T00:00:00Z",
+        "category": null,
+        "image": "https://delight.duksung.ac.kr/attachment/view/25832/cover.jpg?ts=1699859486",
+        "delight_link": "https://delight.duksung.ac.kr/ko/program/all/view/1185",
+        "tagtype": [
+            1,
+            2
+        ],
+        "tagteam": [
+            2
+        ]
+    }
+},
+{
+    "model": "guide.guide",
+    "pk": 12,
+    "fields": {
+        "title": "2023ÇÐ³âµµ 2ÇÐ±â Àå¾ÖÀÎ½Ä°³¼± Çà»ç <ÀÌÃ¢Áø °­»ç ÃÊÃ»°­¿¬>",
+        "starttime": "2023-11-13T06:00:00Z",
+        "endtime": "2023-11-30T00:00:00Z",
+        "category": 2,
+        "image": "https://delight.duksung.ac.kr/attachment/view/25905/cover.jpg?ts=1701241500",
+        "delight_link": "https://delight.duksung.ac.kr/ko/program/all/view/1180",
+        "tagtype": [
+            1
+        ],
+        "tagteam": [
+            2
+        ]
+    }
+},
+{
+    "model": "guide.guide",
+    "pk": 13,
+    "fields": {
+        "title": "2023ÇÐ³âµµ 2ÇÐ±â Á¦9È¸ Àå¾ÖÇÐ»ý Èú¸µÄ·ÇÁ <Àå¾Ö°ü·Ã ¿µÈ­ '¿ø´õ'>",
+        "starttime": "2023-11-13T06:00:00Z",
+        "endtime": "2023-11-24T14:45:00Z",
+        "category": 2,
+        "image": "https://delight.duksung.ac.kr/attachment/view/25901/cover.jpg?ts=1700791213",
+        "delight_link": "https://delight.duksung.ac.kr/ko/program/all/view/1183",
+        "tagtype": [
+            1
+        ],
+        "tagteam": [
+            2
+        ]
+    }
+},
+{
+    "model": "guide.guide",
+    "pk": 14,
+    "fields": {
+        "title": "2023 »çÈ¸º¹ÁöÇÐÀü°ø È¨Ä¿¹Öµ¥ÀÌ Ãë¾÷ÄÜ¼­Æ®",
+        "starttime": "2023-11-21T15:00:00Z",
+        "endtime": "2023-11-25T00:00:00Z",
+        "category": 2,
+        "image": "https://delight.duksung.ac.kr/attachment/view/25993/cover.jpg?ts=1700636663",
+        "delight_link": "https://delight.duksung.ac.kr/ko/program/all/view/1205",
+        "tagtype": [
+            1
+        ],
+        "tagteam": [
+            2
+        ]
+    }
+},
+{
+    "model": "guide.guide",
+    "pk": 15,
+    "fields": {
+        "title": "2023ÇÐ³âµµ ´ö¼º TED ÇÁ·¹Á¨Å×ÀÌ¼Ç °æÁø´ëÈ¸",
+        "starttime": "2023-11-10T07:30:00Z",
+        "endtime": "2023-12-24T06:30:00Z",
+        "category": 1,
+        "image": "https://delight.duksung.ac.kr/attachment/view/25880/cover.jpg?ts=1700715625",
+        "delight_link": "https://delight.duksung.ac.kr/ko/program/all/view/1184",
+        "tagtype": [
+            4
+        ],
+        "tagteam": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "team.maincategory",
+    "pk": 1,
+    "fields": {
+        "name": "·¯´× Åõ°Ô´õ",
+        "slug": "·¯´×-Åõ°Ô´õ"
+    }
+},
+{
+    "model": "team.maincategory",
+    "pk": 2,
+    "fields": {
+        "name": "±Û·Î¹ú Ã§¸°Áö",
+        "slug": "±Û·Î¹ú-Ã§¸°Áö"
+    }
+},
+{
+    "model": "team.maincategory",
+    "pk": 3,
+    "fields": {
+        "name": "´ö¼º Ã§¸°Áö",
+        "slug": "´ö¼º-Ã§¸°Áö"
+    }
+},
+{
+    "model": "team.subcategory",
+    "pk": 1,
+    "fields": {
+        "name": "¾ð¾î",
+        "slug": "¾ð¾î",
+        "main_category": 1
+    }
+},
+{
+    "model": "team.subcategory",
+    "pk": 2,
+    "fields": {
+        "name": "ÀÚ°ÝÁõ/½ÃÇè",
+        "slug": "ÀÚ°ÝÁõ½ÃÇè",
+        "main_category": 1
+    }
+},
+{
+    "model": "team.subcategory",
+    "pk": 3,
+    "fields": {
+        "name": "±³°ú¸ñ",
+        "slug": "±³°ú¸ñ",
+        "main_category": 1
+    }
+},
+{
+    "model": "team.subcategory",
+    "pk": 4,
+    "fields": {
+        "name": "µ¶¼­",
+        "slug": "µ¶¼­",
+        "main_category": 1
+    }
+},
+{
+    "model": "team.subcategory",
+    "pk": 5,
+    "fields": {
+        "name": "±âÅ¸",
+        "slug": "±âÅ¸",
+        "main_category": 1
+    }
+},
+{
+    "model": "team.subcategory",
+    "pk": 6,
+    "fields": {
+        "name": "¾Æ½Ã¾Æ",
+        "slug": "¾Æ½Ã¾Æ",
+        "main_category": 2
+    }
+},
+{
+    "model": "team.subcategory",
+    "pk": 7,
+    "fields": {
+        "name": "À¯·´",
+        "slug": "À¯·´",
+        "main_category": 2
+    }
+},
+{
+    "model": "team.subcategory",
+    "pk": 8,
+    "fields": {
+        "name": "¾ÆÇÁ¸®Ä«",
+        "slug": "¾ÆÇÁ¸®Ä«",
+        "main_category": 2
+    }
+},
+{
+    "model": "team.subcategory",
+    "pk": 9,
+    "fields": {
+        "name": "ºÏ¾Æ¸Þ¸®Ä«",
+        "slug": "ºÏ¾Æ¸Þ¸®Ä«",
+        "main_category": 2
+    }
+},
+{
+    "model": "team.subcategory",
+    "pk": 10,
+    "fields": {
+        "name": "³²¾Æ¸Þ¸®Ä«",
+        "slug": "³²¾Æ¸Þ¸®Ä«",
+        "main_category": 2
+    }
+},
+{
+    "model": "team.subcategory",
+    "pk": 11,
+    "fields": {
+        "name": "¿À¼¼¾Æ´Ï¾Æ",
+        "slug": "¿À¼¼¾Æ´Ï¾Æ",
+        "main_category": 2
+    }
+},
+{
+    "model": "team.subcategory",
+    "pk": 12,
+    "fields": {
+        "name": "°ø¸ðÀü/ÇÐÈ¸",
+        "slug": "°ø¸ðÀüÇÐÈ¸",
+        "main_category": 3
+    }
+},
+{
+    "model": "team.subcategory",
+    "pk": 13,
+    "fields": {
+        "name": "¾îÇÃ¸®ÄÉÀÌ¼Ç °³¹ß",
+        "slug": "¾îÇÃ¸®ÄÉÀÌ¼Ç-°³¹ß",
+        "main_category": 3
+    }
+},
+{
+    "model": "team.subcategory",
+    "pk": 14,
+    "fields": {
+        "name": "ÀÚ±â°è¹ß",
+        "slug": "ÀÚ±â°è¹ß",
+        "main_category": 3
     }
 },
 {
     "model": "team.teammatchingpost",
     "pk": 1,
     "fields": {
-        "title": "í…ŒìŠ¤íŠ¸",
-        "hook_text": "í…ŒìŠ¤íŠ¸",
-        "content": "í…ŒìŠ¤íŠ¸í…ŒìŠ¤íŠ¸í…ŒìŠ¤íŠ¸",
+        "title": "Å×½ºÆ®",
+        "hook_text": "Å×½ºÆ®",
+        "content": "Å×½ºÆ®Å×½ºÆ®Å×½ºÆ®",
         "created_at": "2023-12-05T03:34:49.671Z",
         "updated_at": "2023-12-05T03:34:49.671Z",
         "author": [
