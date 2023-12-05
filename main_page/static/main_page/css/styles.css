@@ -111,6 +111,8 @@
     padding: 10px;
     outline: none;
     margin-top: 200%;
+    position: absolute;
+    bottom: 50px;
   }
 
 footer {
