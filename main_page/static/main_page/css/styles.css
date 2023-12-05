@@ -104,6 +104,8 @@
   
   /* 팝업 버튼 스타일 */
   .popup-btn {
+    position: fixed;
+    bottom: 20px;
     cursor: pointer;
     background-color: transparent;
     color: #fff;
