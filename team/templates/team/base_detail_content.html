@@ -61,7 +61,7 @@
 
             <!-- 메인 화면 -->
             <li class="nav-item active">
-                <a class="nav-link" href="/main">
+                <a class="nav-link" href="/main_page">
                     <i class="fas fa-fw fa-home"></i>
                     <span>메인 화면</span></a>
             </li>
@@ -91,14 +91,13 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse_{{ main_category.slug }}"
             aria-expanded="true" aria-controls="collapse_{{ main_category.slug }}" >
             <i class="fas fa-fw fa-chalkboard-teacher"></i>
-<!--            <input class="form-check-input" type="checkbox" value="{{ main_category.slug }}" id="{{ main_category.slug }}_checkbox" onclick="test('{{ main_category.slug }}', event)"{% if main_category.id in selectedCategories.main %}checked{% endif %}>-->
             <span class="category-span">{{ main_category.name }}</span>
         </a>
         <div id="collapse_{{ main_category.slug }}" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 {% for sub_category in main_category.subcategory_set.all %}
                     <div class="collapse-item">
-                        <input class="filter-checkbox sub-category-checkbox main-category-{{ main_category.id }}" type="checkbox" value="{{ sub_category.slug }}" id="{{ main_category.slug }}_{{ sub_category.slug }}_checkbox" {% if sub_category.id in selectedCategories.sub %}checked{% endif %}>
+                        <input class="sub-category-checkbox" type="checkbox" value="{{ sub_category.id }}" id="{{ sub_category.id }}_checkbox" >
                         {{ sub_category.name }}
                     </div>
                 {% endfor %}
@@ -126,15 +125,15 @@
 
             {% include 'team/topbar.html' %}
 
+                <div id="content-root">
                 {% block detail_content %}
                 {% endblock %}
+                </div>
 
             </div>
             <!-- End of Main Content -->
-
-            <div>test pagination</div>
-        {% include 'team/pagination.html' %}
-        {% include 'team/footer.html' %}
+            {% include 'team/pagination.html' %}
+            {% include 'team/footer.html' %}
 
         </div>
         <!-- End of Content Wrapper -->

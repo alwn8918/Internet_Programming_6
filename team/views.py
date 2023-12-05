@@ -20,11 +20,44 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 
-def get_subcategories(request):
-    main_category_id = request.GET.get('main_category_id')
-    subcategories = SubCategory.objects.filter(main_category_id=main_category_id)
-    data = [{'id': subcategory.id, 'name': subcategory.name} for subcategory in subcategories]
-    return JsonResponse(data, safe=False)
+def get_main_category_posts(request, slug):
+    main_category = MainCategory.objects.get(slug=slug)
+    main_category_posts = TeamMatchingPost.objects.filter(main_category=main_category)
+
+    context = {
+        'isCategorized': True,
+        'team_matching_posts': main_category_posts,
+        'main_category': main_category
+    }
+
+
+    return render(
+        request,
+        'team/content.html',
+        context
+    )
+
+def get_sub_category_posts(request, slug_main, slug_sub):
+    main_category = MainCategory.objects.get(slug=slug_main)
+    sub_category = SubCategory.objects.get(main_category=main_category, slug=slug_sub)
+    # 같은 코드
+    # sub_category = SubCategory.objects.filter(main_category__slug=slug_main, slug=slug_sub)
+
+    sub_category_posts = TeamMatchingPost.objects.filter(sub_category=sub_category)
+
+
+    context = {
+        'isCategorized': True,
+        'team_matching_posts': sub_category_posts,
+        'main_category': main_category,
+        'sub_category': sub_category
+    }
+
+    return render(
+        request,
+        'team/content.html',
+        context
+    )
 
 
 def get_common_data():
@@ -63,6 +96,9 @@ def filtered_content(request):
             # matching_posts = list(matching_posts.values())
 
             context['matching_posts'] = matching_posts
+
+            # 해당되는 포스트가 0개일 경우 {{% if matching_posts %}}가 먹히지 않으므로 flag를 만듦
+            context['isFiltered']=True
 
             # Render the template with the filtered data
             html_content = render(request, 'team/content_template.html', context).content.decode('utf-8')
@@ -119,34 +155,6 @@ def base_detail_content(request):
         context
     )
 
-
-def team_view(request):
-    try:
-        if request.method == 'POST':
-            # Log the request body
-            logger.debug('Request Body: %s', request.body.decode('utf-8'))
-
-            # Load JSON data from the request body
-            data = json.loads(request.body.decode('utf-8'))
-            logger.debug('Received Data: %s', data)
-
-            selected_subcategories = data.get('sub_categories', [])
-
-            # Convert the IDs to integers
-            selected_subcategories = [int(sub_category_id) for sub_category_id in selected_subcategories]
-
-            # Filter TeamMatchingPost instances based on selected subcategories
-            matching_posts = TeamMatchingPost.objects.filter(sub_category__id__in=selected_subcategories)
-            matching_posts = list(matching_posts.values())
-
-            return JsonResponse({'matching_posts': matching_posts}, safe=False)
-
-        return JsonResponse({'error': 'Invalid request method'})
-
-    except Exception as e:
-        # Log the exception for debugging
-        logger.error('Error in team_view: %s', str(e), exc_info=True)
-        return JsonResponse({'error': str(e)})
 
 
 class DetailContentView(DetailView):

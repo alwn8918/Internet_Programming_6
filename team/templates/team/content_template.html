@@ -42,10 +42,14 @@
                 <div>
                     <a href="/team/create_post/" class="btn btn-delight">NEW POST</a>
                 </div>
+                <br>
+
             {% endif %}
         {% endif %}
 
-           {% if matching_posts %}
+
+
+           {% if isFiltered %}
                 <!-- Display team_matching_posts if matching_posts is empty -->
                 <div class="main-content-container col-md-9">
                     <div class="card-container row row-cols-1 row-cols-md-3 g-4">
@@ -56,11 +60,11 @@
                                     <div class="card-body">
                                         {% if post.main_category %}
                                         <span class="badge bg-secondary">
-                                            <a href="{{ post.get_absolute_url }}" class="">
+                                            <a href="{{ post.main_category.get_absolute_url }}" class="">
                                                 {{ post.main_category }}
                                             </a>
                                             >
-                                            <a href="{{ post.get_absolute_url }}" class="">
+                                            <a href="{{ post.sub_category.get_absolute_url }}" class="">
                                                 {{ post.sub_category }}
                                             </a>
                                         </span>
