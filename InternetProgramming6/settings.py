@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'team',
     'crispy_forms',
     'crispy_bootstrap5',
-
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS='bootstrap5'
@@ -157,4 +156,4 @@ STATICFILES_DIRS = [
 
 
 #배포(호스트)
-ALLOWED_HOSTS = ['dsdelighter.pythonanywhere.com']
+#ALLOWED_HOSTS = ['dsdelighter.pythonanywhere.com']
