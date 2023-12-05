@@ -9,6 +9,9 @@ class MainCategory(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return f'/team/category/{self.slug}'
+
 class SubCategory(models.Model):
     name = models.CharField(max_length=50, unique=True)
     slug = models.SlugField(max_length=200, unique=True, allow_unicode=True)
@@ -18,6 +21,9 @@ class SubCategory(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return f'/team/category/{self.main_category.slug}/{self.slug}'
+
 class Tag(models.Model):
     name = models.CharField(max_length=50, unique=True)
     slug = models.SlugField(max_length=200, unique=True, allow_unicode=True)
@@ -26,7 +32,7 @@ class Tag(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return f'/team_building/tag/{self.slug}'
+        return f'/team/tag/{self.slug}'
 
 class TeamMatchingPost(models.Model):
     title = models.CharField(max_length=30)
