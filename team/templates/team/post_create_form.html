@@ -4,7 +4,9 @@
     Create Post
 {% endblock %}
 
+
 {% block content %}
+    {% if user.is_authenticated %}
     <h1>Create New Post</h1>
     <hr>
     <form method="post" enctype="multipart/form-data">
@@ -14,4 +16,11 @@
         </table>
         <button type="submit">Submit</button>
     </form>
+    {% else %}
+
+<div class="container">
+    <div class="row mx-10"><strong>로그인 후에 </strong> 이용할 수 있는 기능입니다.</div>
+    </div>
+{% endif %}
 {% endblock %}
+
